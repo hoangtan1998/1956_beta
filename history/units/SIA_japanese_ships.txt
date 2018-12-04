@@ -1,0 +1,19 @@
+﻿# Destroyers sent to CAN in exchange for bases
+
+units = {
+						
+	navy = {					
+		name = "Japanese Destroyer Flotilla 4"
+		base = 7408
+		location = 7408 # 
+
+		ship = { name = "Kaya" definition = destroyer equipment = { destroyer_1 = {amount = 1 owner = JAP} } }		
+		ship = { name = "Kaya" definition = destroyer equipment = { destroyer_1 = {amount = 1 owner = JAP} } }					
+		ship = { name = "Kaya" definition = destroyer equipment = { destroyer_1 = {amount = 1 owner = JAP} } }					
+		ship = { name = "Kaya" definition = destroyer equipment = { destroyer_1 = {amount = 1 owner = JAP} } }				
+		ship = { name = "Kaya" definition = destroyer equipment = { destroyer_1 = {amount = 1 owner = JAP} } }					
+		ship = { name = "Kaya" definition = destroyer equipment = { destroyer_1 = {amount = 1 owner = JAP} } }				
+		ship = { name = "Kaya" definition = destroyer equipment = { destroyer_1 = {amount = 1 owner = JAP} } }				
+	}
+}
+					

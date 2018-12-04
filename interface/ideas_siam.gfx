@@ -1,0 +1,57 @@
+spriteTypes = {	
+
+
+
+	SpriteType = {
+		name = "GFX_idea_traits_strip"
+		texturefile = "gfx/interface/ideas/idea_traits_strip.dds"
+		noOfFrames = 14		
+	}
+
+	### new tfv nat spirit icons
+	
+	spriteType = {
+		name = "GFX_idea_SIA_idea_Pandemonium"
+		texturefile = "gfx/interface/ideas/SIA_idea_Pandemonium.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_SIA_idea_Paribatra_Sukhumbandhu"
+		texturefile = "gfx/interface/ideas/SIA_idea_Paribatra_Sukhumbandhu.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_SIA_idea_Chao_Phraya_Srithammarin"
+		texturefile = "gfx/interface/ideas/SIA_idea_Chao_Phraya_Srithammarin.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_SIA_idea_Luang_Wichitwathakan"
+		texturefile = "gfx/interface/ideas/SIA_idea_Luang_Wichitwathakan.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_SIA_idea_Chao_Phraya_Srithammarin"
+		texturefile = "gfx/interface/ideas/SIA_idea_Chao_Phraya_Srithammarin.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_SIA_idea_minister_plaek"
+		texturefile = "gfx/interface/ideas/SIA_idea_minister_plaek.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_SIA_idea_Pridi_Banomyong"
+		texturefile = "gfx/interface/ideas/SIA_idea_Pridi_Banomyong.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_idea_sia_rama_vii_exile"
+		texturefile = "gfx/interface/ideas/SIA_idea_rama_vii_exile.dds"
+	}	
+
+	spriteType = {
+		name = "GFX_idea_sia_rama_vii"
+		texturefile = "gfx/interface/ideas/SIA_idea_rama_vii.dds"
+	}	
+	}

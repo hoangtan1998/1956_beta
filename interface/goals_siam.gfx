@@ -1,0 +1,155 @@
+spriteTypes = {	
+
+	#### Generic continuous goal icons
+
+	SpriteType = {
+	name = "GFX_goal_continuous_air_production"
+	texturefile = "gfx/interface/goals/goal_continuous_air_production.dds"			
+	}	
+	
+	SpriteType = {
+	name = "GFX_goal_SIA_rama_vii_constitutional"
+	texturefile = "gfx/interface/goals/SIA_rama_vii_constitutional.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_SIA_anti_chinese"
+	texturefile = "gfx/interface/goals/SIA_anti_chinese.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_SIA_siamese_navy"
+	texturefile = "gfx/interface/goals/SIA_siamese_navy.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_SIA_siamese_air_force"
+	texturefile = "gfx/interface/goals/SIA_siamese_air_force.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_SIA_siamese_coat_of_arms"
+	texturefile = "gfx/interface/goals/SIA_siamese_coat_of_arms.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_SIA_siamese_army"
+	texturefile = "gfx/interface/goals/SIA_siamese_army.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_SIA_liberal_siam"
+	texturefile = "gfx/interface/goals/SIA_liberal_siam.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_SIA_rice_culture"
+	texturefile = "gfx/interface/goals/SIA_rice_culture.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_SIA_neutrality_prosperity"
+	texturefile = "gfx/interface/goals/SIA_neutrality_prosperity.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_SIA_military_budget_up"
+	texturefile = "gfx/interface/goals/SIA_military_budget_up.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_rama_vii_restoration"
+	texturefile = "gfx/interface/goals/SIA_rama_vii_restoration.dds"			
+	}	
+	
+	SpriteType = {
+	name = "GFX_goal_siam_royal_army"
+	texturefile = "gfx/interface/goals/SIA_royal_army.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_SIA_thai_shield"
+	texturefile = "gfx/interface/goals/SIA_thai_shield.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_siam_royal_army"
+	texturefile = "gfx/interface/goals/SIA_royal_army.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_siam_loyalty_monarchy"
+	texturefile = "gfx/interface/goals/SIA_loyalty_monarchy.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_siam_industry"
+	texturefile = "gfx/interface/goals/SIA_industry.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_siam_bills"
+	texturefile = "gfx/interface/goals/SIA_bills.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_plaek_control"
+	texturefile = "gfx/interface/goals/SIA_plaek_control.dds"			
+	}
+		
+	SpriteType = {
+	name = "GFX_goal_attack_indochina"
+	texturefile = "gfx/interface/goals/SIA_attack_indochina.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_thai_mass_mobilisation"
+	texturefile = "gfx/interface/goals/SIA_siam_mobilisation.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_thai_monarchist_rebellion"
+	texturefile = "gfx/interface/goals/SIA_thai_monarchist_rebellion.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_thai_purge_opposition_siam"
+	texturefile = "gfx/interface/goals/SIA_purge_opposition_siam.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_SIA_pan_thai"
+	texturefile = "gfx/interface/goals/SIA_pan_thai.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_siam_democratic_revolution"
+	texturefile = "gfx/interface/goals/SIA_democratic_revolution.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_siam_expansion_policy"
+	texturefile = "gfx/interface/goals/SIA_expansion_policy.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_siam_purge_plaek"
+	texturefile = "gfx/interface/goals/SIA_purge_plaek.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_siam_purge_democrats"
+	texturefile = "gfx/interface/goals/SIA_purge_democrats.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_siam_governement"
+	texturefile = "gfx/interface/goals/SIA_governement.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_SIA_buddhist_traditions"
+	texturefile = "gfx/interface/goals/SIA_buddhist_traditions.dds"			
+	}
+	
+}

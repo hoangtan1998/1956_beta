@@ -1,431 +1,26 @@
 focus_tree = {
-   id = siam_focus
-   
-   country = {
-     factor = 0
-	 
-	 modifier = {
-	  add = 10
-	  tag = SIA
-	 }
-   }
-
-	continuous_focus_position = { x = 0 y = 1050 }	
-	
-   focus = {
-		id = SIA_investors
-		icon = GFX_goal_generic_production
-		x = 2
-		y = 0
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 0.5
-				uses = 1
-				category = industry
-			}
-		}
-
-		ai_will_do = {
-			factor = 3
+	id = Siam
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = SIA
 		}
 	}
-	
-   focus = {
-       id = SIA_production_effort_1
-       icon = GFX_goal_generic_production 
-		x = 4
-		y = 5
-		cost = 10
-		prerequisite = { focus = SIA_infrastructure_effort_2 }
-		available_if_capitulated = yes
-		ai_will_do = {
-			factor = 10
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = construction_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = industrial_complex
-						size < 1
-						include_locked = yes
-					}					
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 2
-			add_building_construction = {
-				type = industrial_complex
-				level = 2
-				instant_build = yes
-			}			
-		}
-
-		completion_reward = {
-			289 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-			add_ideas = rice_reforms
-		}
-	}
-	
-		focus = {
-		id = SIA_military_effort_1
-		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = SIA_infrastructure_effort_2 }
-		x = 2
-		y = 5
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 2			
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = production_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = arms_factory
-						size < 1
-						include_locked = yes
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 2
-			add_building_construction = {
-				type = arms_factory
-				level = 2
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			289 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-	
+	default = no
+	continuous_focus_position = { x = 100 y = 1500}
 	focus = {
-		id = SIA_military_effort_2
-		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = SIA_military_effort_3 }
-		x = 3
-		y = 2
-		cost = 10
-
-		available_if_capitulated = yes
-
-
+		id = SIA_future_of_the_nation
+		icon = GFX_goal_SIA_siamese_coat_of_arms
+		cost = 8,00
 		ai_will_do = {
-			factor = 2			
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = production_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = arms_factory
-						size < 1
-						include_locked = yes
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 2
-			add_building_construction = {
-				type = arms_factory
-				level = 2
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			724 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-	
-	
-	
-	focus = {
-       id = SIA_production_effort_2
-       icon = GFX_goal_generic_construct_civ_factory	   
-		x = 1
-		y = 2
-		cost = 10
-		prerequisite = { focus = SIA_production_effort_3 }
-		available_if_capitulated = yes
-		ai_will_do = {
-			factor = 10
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = construction_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = industrial_complex
-						size < 1
-						include_locked = yes
-					}					
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 2
-			add_building_construction = {
-				type = industrial_complex
-				level = 2
-				instant_build = yes
-			}			
-		}
-
-		completion_reward = {
-			724 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_infrastructure_effort_1
-		icon = GFX_goal_generic_construct_infrastructure
-		prerequisite = { focus = SIA_production_effort_2}
-		prerequisite = {focus = SIA_military_effort_2}
-		x = 2
-		y = 3
-		cost = 10
-        ai_will_do = {
-		 factor = 5
-		}
-		available_if_capitulated = yes
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = infrastructure_effort_tt
-				289 = {			
-					free_building_slots = {
-						building = infrastructure
-						size < 2
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_building_construction = {
-				type = infrastructure
-				level = 2
-				instant_build = yes
-		   }
-        }
-		completion_reward = {
-			289 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-   
-      focus = {
-		id = SIA_infrastructure_effort_2
-		icon = GFX_goal_generic_construct_infrastructure
-		prerequisite = { focus = SIA_infrastructure_effort_1}
-		x = 2
-		y = 4
-		cost = 10
-        ai_will_do{
-		factor = 5
-		}
-		available_if_capitulated = yes
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = infrastructure_effort_tt
-				    724 = {			
-					free_building_slots = {
-						building = infrastructure
-						size < 2
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_building_construction = {
-				type = infrastructure
-				level = 2
-				instant_build = yes
-		   }
-        }
-		completion_reward = {
-			724 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_military_effort_3
-		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = SIA_investors }
-		x = 3
-		y = 1
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 2			
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = production_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = arms_factory
-						size < 1
-						include_locked = yes
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 2
-			add_building_construction = {
-				type = arms_factory
-				level = 2
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			724 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-	
-		focus = {
-       id = SIA_production_effort_3
-       icon = GFX_goal_generic_construct_civ_factory	   
-		x = 1
-		y = 1 
-		cost = 10
-		prerequisite = { focus = SIA_investors }
-		available_if_capitulated = yes
-		ai_will_do = {
-			factor = 10
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = construction_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = industrial_complex
-						size < 1
-						include_locked = yes
-					}					
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 2
-			add_building_construction = {
-				type = industrial_complex
-				level = 2
-				instant_build = yes
-			}			
-		}
-
-		completion_reward = {
-			724 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-   
-   focus = {
-		id = SIA_oil_industry
-		icon = GFX_goal_generic_oil_refinery
-		prerequisite = { focus = SIA_synth_oil_focus }
-		x = 0
-		y = 6
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 5
+			factor = 1
 		}
 
 		available = {
-			controls_state = 289
-			controls_state = 724
-		}
 
+		}
+		
 		bypass = {
 
 		}
@@ -433,179 +28,2474 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
+		x = 10
+		y = 0
 		completion_reward = {
-			289 = {
-				add_resource = {
-					type = oil
-					amount = 8
-				}
-			}
-			724 = {
-			 add_resource = {
-			  type = oil
-			  amount = 8
-			 }
-			}
+		add_political_power = 150
 		}
-	}
-	
-	focus = { 
-	 id = SIA_adressing_social_issues
-	 icon = GFX_goal_generic_demand_territory
-	 x=7
-	 y=0
-	 cost = 10
-	 
-	 ai_will_do = {
-	  factor = 5
-	 }
-	 available_if_capitulated = yes
-	 completion_reward = {
-       add_political_power = 120	 
-	 }
-    }
-   
-   focus = {
-    id= SIA_newspapers
-	icon = GFX_goal_generic_production2
-	x = 6
-	y = 1
-	cost = 10
-		ai_will_do = {
-			factor = 5
-		}
-      prerequisite = {
-	   focus = SIA_adressing_social_issues
-	  }
-		available_if_capitulated = yes
 
+	}
+	focus = {
+		id = SIA_modernise_the_siamese_army
+		icon = GFX_goal_SIA_siamese_army
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 41
+		y = 0
+		completion_reward = {
+			army_experience = 10
+		}
+
+	}
+	focus = {
+		id = SIA_industrialising_our_country
+		icon = GFX_goal_SIA_industry
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 28
+		y = 0
 		completion_reward = {
 			add_tech_bonus = {
-				name = SIA_newspapers
-				uses = 1
+				name = industrial_bonus
 				bonus = 0.5
-				category = electronics
-				category = support_tech
+				uses = 2
+				category = industry
 			}
 		}
-   }
-   
-   focus = {
-		id = SIA_elite_schools
-		icon = GFX_goal_generic_scientific_exchange
-		x = 8
-		y = 1
-		cost = 10
-		ai_will_do = { 
-	
-			factor = 5
-		}
-        prerequisite = {
-         focus = SIA_adressing_social_issues		
-		}
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_ideas = elite_schools_focus
-		}
 	}
-   
-  focus = {
-		id = SIA_suphapburut_group
-		icon = GFX_goal_tfv_generic_tech_sharing
-		x = 7
-		y = 2
-		cost = 10
-        ai_will_do = { 
+	focus = {
+		id = SIA_modernise_our_navy
+		icon = GFX_goal_SIA_siamese_navy
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
 		
-			factor = 5
-		} 
-		prerequisite = { focus = SIA_elite_schools }
-		prerequisite = { focus = SIA_newspapers }
-		available_if_capitulated = yes
-           
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-	  
-  focus = {
-		id = SIA_heal_the_divide_1
-		icon = GFX_goal_generic_national_unity
-		x = 6
-		y = 3
-		cost = 10
-		ai_will_do = {
-			factor = 10
-		}
-        prerequisite = { focus = SIA_suphapburut_group }
-		available_if_capitulated = yes
+		bypass = {
 
-		completion_reward = {
-	        remove_ideas = divided_nation_full	
-			add_ideas = divided_nation_half
 		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 52
+		y = 0
+		completion_reward = {
+					navy_experience = 25
+		}
+
 	}
-	
-  focus = {
-		id = SIA_heal_the_divide_2
-		icon = GFX_goal_anschluss
-		x = 6
-		y = 5
-		cost = 15
+	focus = {
+		id = SIA_our_air_force
+		icon = GFX_goal_SIA_siamese_air_force
+		cost = 8,00
 		ai_will_do = {
-			factor = 10
+			factor = 1
 		}
-        prerequisite = { focus = SIA_new_siamese_man }
-		available_if_capitulated = yes
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 60
+		y = 0
 		completion_reward = {
-	        remove_ideas = divided_nation_half
-			add_political_power = 120
+					air_experience = 25
 		}
+
 	}
-	
-	  
-  focus = {
-   id = SIA_new_siamese_man
-   icon = GFX_goal_generic_demand_territory
-   x=6
-   y=4
-   cost = 10
-   ai_will_do = {
-    factor = 5
-   } 
-   prerequisite = { focus = SIA_heal_the_divide_1 }
-    completion_reward = {
-	  hidden_effect = {
-	  set_rule = {
-	  can_use_kamikaze_pilots = yes
+	focus = {
+		id = SIA_resist_the_governement
+		icon = GFX_goal_generic_demand_territory
+		cost = 8,00
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_future_of_the_nation
+		}
+		mutually_exclusive = {
+			focus = SIA_second_monarchist_rebellion
+			focus = SIA_consolidate_the_governement
+		}
+		completion_reward = {
+		add_popularity = { ideology = democratic popularity = 0.1 }
+		}
+		x = 4
+		y = 1
+
+	}
+	focus = {
+		id = SIA_rally_under_khap
+		icon = GFX_goal_generic_national_unity
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_resist_the_governement
+		}
+		completion_reward = {
+		add_popularity = { ideology = democratic popularity = 0.2 }
+		}
+		x = 4
+		y = 2
+
+	}
+	focus = {
+		id = SIA_peoples_support
+		icon = GFX_goal_generic_improve_relations
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_rally_under_khap
+		}
+		completion_reward = {
+		add_popularity = { ideology = democratic popularity = 0.1 }
+		}
+		x = 3
+		y = 3
+
+	}
+	focus = {
+		id = SIA_contact_the_KMT
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_rally_under_khap
+		}
+		completion_reward = {
+		add_ideas = SIA_support_from_the_KMT
+		}
+		completion_reward = {
+		set_rule = {
+				can_send_volunteers = yes
+			}
+		}
+		x = 5
+		y = 3
+
+	}
+	focus = {
+		id = SIA_second_siamese_revolution
+		icon = GFX_goal_siam_democratic_revolution
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		OR = {
+	 			has_government = neutrality
+	 			is_puppet = no
+	 		}
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_peoples_support
+		}
+		prerequisite = {
+			focus = SIA_contact_the_KMT
+		}
+		completion_reward = {
+		SIA = { country_event = siam.3 }
+		remove_ideas = SIA_weak_governement
+		}
+		
+		x = 4
+		y = 4
+
+	}
+	focus = {
+		id = SIA_monarchist_compromise
+		icon = GFX_goal_SIA_rama_vii_constitutional
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_second_siamese_revolution
+		}
+		mutually_exclusive = {
+			focus = SIA_found_the_republic
+		}
+		completion_reward = {
+		swap_ideas = {
+				remove_idea = SIA_Rama_VII_Exile
+				add_idea = SIA_Rama_VII_King
+			}
+		set_cosmetic_tag = SIA_kingdom
+		}
+		x = 3
+		y = 5
+
+	}
+	focus = {
+		id = SIA_found_the_republic
+		icon = GFX_goal_tfv_sever_ties_with_uk
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_second_siamese_revolution
+		}
+		mutually_exclusive = {
+			focus = SIA_monarchist_compromise
+		}
+		completion_reward = {
+		swap_ideas = {
+				remove_idea = SIA_Rama_VII_Exile
+				add_idea = SIA_republican_spirit
+			}
+		set_cosmetic_tag = SIA_republic 
+		}
+		x = 5
+		y = 5
+
+	}
+	focus = {
+		id = SIA_a_new_constitution
+		icon = GFX_focus_generic_treaty
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_monarchist_compromise
+			focus = SIA_found_the_republic
+		}
+		completion_reward = {
+		add_ideas = SIA_siamese_democracy
+		add_ideas = SIA_Pridi_Banomyong  
+		}
+		x = 4
+		y = 6
+
+	}
+	focus = {
+		id = SIA_ressurect_the_yellow_cover_dossier
+		icon = GFX_goal_siam_bills
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_a_new_constitution
+		}
+		completion_reward = {
+		add_ideas = SIA_social_reforms
+		}
+		x = 2
+		y = 7
+
+	}
+	focus = {
+		id = SIA_legislative_reforms
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_a_new_constitution
+		}
+		completion_reward = {
+		add_ideas = SIA_legislative_reforms
+		}
+		x = 4
+		y = 7
+
+	}
+	focus = {
+		id = SIA_a_true_democracy
+		icon = GFX_goal_support_democracy
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_legislative_reforms
+		}
+		completion_reward = {
+		add_stability = 0.05
+		add_ideas = SIA_defend_democracy
+		}
+		x = 4
+		y = 8
+
+	}
+	focus = {
+		id = SIA_contact_the_west
+		icon = GFX_focus_chi_british_cooperation
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = {
+			NOT = { has_war_with = ENG }
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = ENG
+					has_war_with = SIA
 				}
 			}
-	 custom_effect_tooltip = kamikaze_focus_tooltip
-	 
+			is_subject = no
+			ENG = { is_faction_leader = yes }
+		}
+		prerequisite = {
+			focus = SIA_a_new_constitution
+		}
+		completion_reward = {
+		ENG = { country_event = siam.2 }
+		}
+		x = 6
+		y = 7
+
 	}
-  }
-  
-  focus = {
-		id = SIA_radar
-		prerequisite = { focus = SIA_suphapburut_group }
-		icon = GFX_goal_generic_radar
-		x = 8
-		y = 3
-		cost = 10
+	focus = {
+		id = SIA_westernization
+		icon = GFX_goal_generic_production2
+		cost = 8,00
 		ai_will_do = {
-			factor = 5
+			factor = 1
 		}
 
-		available_if_capitulated = yes
+		available = {
 
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_contact_the_west
+		}
 		completion_reward = {
-			air_experience = 25
+		add_ideas = SIA_westernization
+		}
+		x = 6
+		y = 8
+
+	}
+	focus = {
+		id = SIA_second_monarchist_rebellion
+		icon = GFX_goal_thai_monarchist_rebellion
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			OR = {
+	 			has_government = democratic
+	 			is_puppet = no
+	 		}
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_future_of_the_nation
+		}
+		mutually_exclusive = {
+			focus = SIA_resist_the_governement
+			focus = SIA_consolidate_the_governement
+		}
+		completion_reward = {
+			SIA = { country_event = siam.1 }
+		}
+		x = 10
+		y = 1
+
+	}
+	focus = {
+		id = SIA_restore_rama
+		icon = GFX_goal_rama_vii_restoration
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			OR = {
+	 			has_government = neutrality
+	 			is_puppet = no
+	 		}
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_second_monarchist_rebellion
+		}
+		completion_reward = {
+		add_political_power = 50
+			create_country_leader = {
+				name = "Rama VII"
+				desc = "POLITICS_RAMA_VII_DESC"
+				picture = Portrait_siam_Rama_Vii.dds				
+				expire = "1965.1.1"
+				ideology = despotism
+		}
+		remove_ideas = SIA_Rama_VII_Exile
+		}
+	
+		x = 10
+		y = 2
+
+	}
+	focus = {
+		id = SIA_purge_the_army
+		icon = GFX_goal_siam_purge_plaek
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_restore_rama
+		}
+		completion_reward = {
+		add_timed_idea = { idea = SIA_army_purge days = 15 }
+		add_stability = 0.05
+		}
+		x = 9
+		y = 3
+
+	}
+	focus = {
+		id = SIA_purge_democrats
+		icon = GFX_goal_siam_purge_democrats
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_restore_rama
+		}
+		completion_reward = {
+		add_stability = 0.05
+		remove_ideas = SIA_weak_governement
+		
+		}
+		
+		x = 11
+		y = 3
+
+	}
+	focus = {
+		id = SIA_neutrality_and_prosperity
+		icon = GFX_goal_SIA_neutrality_prosperity
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_purge_the_army
+		}
+		prerequisite = {
+			focus = SIA_purge_democrats
+		}
+		completion_reward = {
+		add_ideas = SIA_neutrality_and_prosperity
+		}
+		x = 10
+		y = 4
+
+	}
+	
+	focus = {
+		id = SIA_restore_absolute_power
+		icon = GFX_goal_generic_demand_territory
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_neutrality_and_prosperity
+		}
+		completion_reward = {
+		add_ideas = SIA_absolute_power
+		}
+		x = 10
+		y = 5
+
+	}
+	focus = {
+		id = SIA_preserve_our_heritage
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_loyalty_to_the_monarchy
+		}
+		completion_reward = {
+		add_political_power = 200
+		add_stability = 0.1
+		}
+		x = 11
+		y = 7
+
+	}
+	focus = {
+		id = SIA_loyalty_to_the_monarchy
+		icon = GFX_goal_SIA_buddhist_traditions_shine
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		prerequisite = {
+			focus = SIA_restore_absolute_power
+		}
+		completion_reward ={ 
+		
+		add_ideas = SIA_buddhist_traditions
+		
+		
+		}
+		
+		x = 11
+		y = 6
+
+	}
+	focus = {
+		id = SIA_siamese_identity
+		icon = GFX_focus_generic_support_the_left_right
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_preserve_our_heritage
+		}
+		completion_reward = {
+		add_ideas = SIA_siamese_identity
+		}
+		x = 11
+		y = 8
+
+	}
+	focus = {
+		id = SIA_consolidate_the_governement
+		icon = GFX_goal_siam_governement
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_future_of_the_nation
+		}
+		mutually_exclusive = {
+			focus = SIA_resist_the_governement
+			focus = SIA_second_monarchist_rebellion
+		}
+		completion_reward = {
+		add_political_power = 200
+		
+		}
+		x = 16
+		y = 1
+
+	}
+	focus = {
+		id = SIA_purge_the_opposition
+		icon = GFX_goal_thai_purge_opposition_siam
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_consolidate_the_governement
+		}
+		completion_reward = {
+		add_timed_idea = { idea = SIA_opposition_purged days = 25 }
+		remove_ideas = SIA_weak_governement
+		}
+		x = 16
+		y = 2
+
+	}
+	focus = {
+		id = SIA_maintain_the_empty_throne
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_purge_the_opposition
+		}
+		mutually_exclusive = {
+			focus = SIA_declare_the_republic
+		}
+		completion_reward = {
+					remove_ideas = SIA_Rama_VII_Exile
+					
+		}
+		x = 15
+		y = 3
+
+	}
+	focus = {
+		id = SIA_declare_the_republic
+		icon = GFX_focus_rom_abdicate
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_purge_the_opposition
+		}
+		mutually_exclusive = {
+			focus = SIA_maintain_the_empty_throne
+		}
+		completion_reward = {
+		add_ideas = SIA_full_control
+		set_cosmetic_tag = SIA_republic 
+		}
+		x = 17
+		y = 3
+
+	}
+	focus = {
+		id = SIA_plaek_takes_power
+		icon = GFX_goal_plaek_control
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		OR = {
+	 			has_government = fascism
+	 			is_puppet = no
+	 		}
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_maintain_the_empty_throne
+			focus = SIA_declare_the_republic
+		}
+		completion_reward = {
+		set_politics = {
+					ruling_party = fascism
+					elections_allowed = no
+				}
+		add_popularity = {
+				popularity = 0.55
+				ideology = fascism
+			}
+		create_country_leader = {
+				name = "Plaek Phibunsongkhram"
+				desc = "POLITICS_PLEAK_DESC"
+				picture = Portrait_Siam_Plaek_Phibunsongkhram.dds			
+				expire = "1965.1.1"
+				ideology = fascism_ideology
+			}
+		}
+		x = 16
+		y = 4
+
+	}
+	focus = {
+		id = SIA_pan_thai_propaganda
+		icon = GFX_goal_SIA_pan_thai_shine
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_plaek_takes_power
+		}
+		x = 14
+		y = 5
+		completion_reward = {
+		add_state_core = 670
+		add_state_core = 741
+		add_ideas = SIA_pan_thai_propaganda
+		}
+
+	}
+	focus = {
+		id = SIA_expansionist_projects
+		icon = GFX_goal_siam_expansion_policy
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_plaek_takes_power
+		}
+		completion_reward = {
+		add_ideas = SIA_expansionist_projects
+		}
+		x = 17
+		y = 5
+
+	}
+	focus = {
+		id = SIA_woo_germany
+		icon = GFX_focus_chi_mission_to_germany
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		NOT = { has_war_with = GER }
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = GER
+					has_war_with = SIA
+				}
+			}
+			is_subject = no
+			GER = { is_faction_leader = yes }
+		}
+		
+		bypass = {
+		is_in_faction_with = GER
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_expansionist_projects
+		}
+		mutually_exclusive = {
+			focus = SIA_ourselves_alone
+			focus = SIA_woo_japan
+		}
+		completion_reward = {
+			GER = { country_event = siam.4 }
+		}
+		x = 15
+		y = 6
+
+	}
+	focus = {
+		id = SIA_german_officers
+		icon = GFX_focus_chi_army_reform
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_woo_germany
+		}
+		completion_reward = {
+		add_ideas = SIA_german_officers
+		}
+		x = 15
+		y = 7
+
+	}
+	focus = {
+		id = SIA_ourselves_alone
+		icon = GFX_goal_generic_fortify_city
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_expansionist_projects
+		}
+		mutually_exclusive = {
+			focus = SIA_woo_germany
+			focus = SIA_woo_japan
+		}
+		completion_reward = {
+		set_rule = { can_create_factions = yes }
+		}
+		x = 17
+		y = 6
+
+	}
+	focus = {
+		id = SIA_woo_japan
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = { has_war_with = JAP }
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = JAP
+					has_war_with = SIA
+				}
+			}
+			is_subject = no
+			JAP = { is_faction_leader = yes }
+		}
+		
+		bypass = {
+		is_in_faction_with = JAP
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_expansionist_projects
+		}
+		mutually_exclusive = {
+			focus = SIA_ourselves_alone
+			focus = SIA_woo_germany
+		}
+		completion_reward = {
+			JAP = { country_event = siam.5 }
+		}
+		x = 19
+		y = 6
+
+	}
+	focus = {
+		id = SIA_invade_indochina
+		icon = GFX_goal_attack_indochina
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_woo_germany
+			focus = SIA_woo_japan
+			focus = SIA_ourselves_alone
+		}
+		completion_reward = {
+		create_wargoal = {
+					type = take_state_focus
+					target = FRA
+					generator = { 670 741 }
+				}
+		}
+		x = 17
+		y = 7
+
+	}
+	focus = {
+		id = SIA_ask_for_laos_and_cambodia
+		icon = GFX_goal_generic_improve_relations
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_woo_japan
+		}
+		available = {
+		
+			is_puppet = no
+			is_in_faction_with = JAP
+		JAP = { 
+				controls_state = 670 	
+				controls_state = 741
+				JAP = { is_faction_leader = yes }
+			}
+		}
+		completion_reward = {
+		JAP = { country_event = siam.9 }
+		}
+		x = 19
+		y = 7
+
+	}
+	focus = {
+		id = SIA_increase_military_budget
+		icon = GFX_goal_SIA_military_budget_up
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_plaek_takes_power
+		}
+		completion_reward = {
+		add_ideas = SIA_increase_military_budget
+		}
+		x = 20
+		y = 5
+
+	}
+	focus = {
+		id = SIA_developement_of_the_military_sector
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_increase_military_budget
+		}
+		completion_reward = {
+		random_owned_controlled_state = {
+		limit = {
+		free_building_slots = {
+		building = arms_factory
+		size > 1
+		include_locked = yes
+		}
+		}
+		add_extra_state_shared_building_slots = 2
+		add_building_construction = {
+		type = arms_factory
+		level = 2
+		instant_build = yes
+		}
+		}
+		}
+		x = 21
+		y = 6
+
+	}
+	focus = {
+		id = SIA_improve_rice_exportations
+		icon = GFX_goal_SIA_rice_culture
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_industrialising_our_country
+		}
+		x = 24
+		y = 1
+		completion_reward = {
+		add_ideas = SIA_improve_rice_exportations
+		}
+
+	}
+	focus = {
+		id = SIA_regulate_exports
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 04,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_improve_rice_exportations
+		}
+		mutually_exclusive = {
+			focus = SIA_laissez_faire
+		}
+		completion_reward = {
+		add_ideas = SIA_regulate_exports
+		}
+		x = 23
+		y = 2
+
+	}
+	focus = {
+		id = SIA_laissez_faire
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 04,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_improve_rice_exportations
+		}
+		mutually_exclusive = {
+			focus = SIA_regulate_exports
+		}
+		completion_reward = {
+		add_ideas = SIA_laissez_faire
+		}
+		x = 25
+		y = 2
+
+	}
+	focus = {
+		id = SIA_depression_conquered
+		icon = GFX_goal_generic_production2
+		cost = 04,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_regulate_exports
+			focus = SIA_laissez_faire
+		}
+		completion_reward = {
+		remove_ideas = SIA_great_depression
+		random_owned_state = { add_extra_state_shared_building_slots = 2 }
+		random_owned_state = { add_extra_state_shared_building_slots = 2 }
+		}
+		x = 24
+		y = 3
+
+	}
+	focus = {
+		id = SIA_the_civilian_sector
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_industrialising_our_country
+		}
+		x = 28
+		y = 1
+		completion_reward = {
+		random_owned_controlled_state = {
+limit = {
+free_building_slots = {
+building = industrial_complex
+size > 1
+include_locked = yes
+}
+}
+add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = industrial_complex
+level = 2
+instant_build = yes
+		}
+		}
+		}
+	}
+	focus = {
+		id = SIAI_connect_our_nation
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_the_civilian_sector
+		}
+		completion_reward = {
+		724 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+		289 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+		}
+		x = 27
+		y = 2
+
+	}
+	focus = {
+		id = SIA_foreign_investors
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_the_civilian_sector
+		}
+		x = 29
+		y = 2
+		completion_reward = {
+		add_ideas = SIA_foreign_investments
+		}
+
+	}
+	focus = {
+		id = SIA_further_industrialisation
+		icon = GFX_goal_generic_construction
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIAI_connect_our_nation
+		}
+		prerequisite = {
+			focus = SIA_foreign_investors
+		}
+		completion_reward = {
+		random_owned_state = { add_extra_state_shared_building_slots = 2 }
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+			random_owned_controlled_state = {
+limit = {
+free_building_slots = {
+building = industrial_complex
+size > 0
+include_locked = yes
+}
+}
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = industrial_complex
+level = 1
+instant_build = yes
+}
+}
+
+		}
+		x = 28
+		y = 3
+
+	}
+	focus = {
+		id = SIA_arms_factories_in_the_north
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_further_industrialisation
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+			prioritize = { 289 }
+				limit = {
+					ROOT = { has_full_control_of_state = PREV }
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = # state_flag_1 here
+			}
+		
+		
+			}
+		x = 27
+		y = 4
+
+	}
+	focus = {
+		id = SIA_arms_factories_in_the_south
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_further_industrialisation
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+			prioritize = { 724 }
+				limit = {
+					ROOT = { has_full_control_of_state = PREV }
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = # state_flag_1 here
+			}
+		
+		
+			}
+		x = 29
+		y = 4
+
+	}
+	focus = {
+		id = SIA_an_industrialised_nation
+		icon = GFX_focus_generic_industry_2
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_arms_factories_in_the_north
+		}
+		prerequisite = {
+			focus = SIA_arms_factories_in_the_south
+		}
+		completion_reward = {
+		random_owned_controlled_state = {
+limit = {
+free_building_slots = {
+building = industrial_complex
+size > 2
+include_locked = yes
+}
+}
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+type = industrial_complex
+level = 3
+instant_build = yes
+}
+}
+		}
+		x = 28
+		y = 5
+
+	}
+	focus = {
+		id = SIA_develop_the_capital
+		icon = GFX_goal_generic_construct_civilian
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_industrialising_our_country
+		}
+		available = {
+			num_of_factories > 20
+		}
+		completion_reward = {
+		289 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+						}
+						add_extra_state_shared_building_slots = 4
+					}
+				}
+		}
+		x = 31
+		y = 1
+
+	}
+	focus = {
+		id = SIA_rural_expansion
+		icon = GFX_goal_generic_construction
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_develop_the_capital
+		}
+		available = {
+			num_of_factories > 25
+		}
+		completion_reward = {
+		724 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+						}
+						add_extra_state_shared_building_slots = 4
+					}
+				}
+		}
+		x = 31
+		y = 3
+
+	}
+	focus = {
+		id = SIA_develop_education
+		icon = GFX_focus_research
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_develop_the_capital
+		}
+		completion_reward = {
+		add_research_slot = 1
+		}
+		x = 32
+		y = 2
+
+	}
+	focus = {
+		id = SIA_modernise_our_doctrines
+		icon = GFX_goal_generic_army_doctrines
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_modernise_the_siamese_army
+		}
+		completion_reward = {
+		add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		x = 36
+		y = 1
+
+	}
+	focus = {
+		id = SIA_every_man_for_the_country
+		icon = GFX_focus_prc_infiltration
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_modernise_our_doctrines
+		}
+		mutually_exclusive = {
+			focus = SIA_defensive_approach
+			focus = SIA_bullets_before_peoples
+		}
+		completion_reward = {
+		add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_mass_assault
+
+			}
+		}
+		x = 34
+		y = 2
+
+	}
+	focus = {
+		id = SIA_mass_mobilisation
+		icon = GFX_goal_thai_mass_mobilisation
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_every_man_for_the_country
+		}
+		completion_reward = {
+		add_ideas = SIA_mass_mobilisation
+		}
+		x = 34
+		y = 3
+
+	}
+	focus = {
+		id = SIA_defensive_approach
+		icon = GFX_goal_generic_position_armies
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_modernise_our_doctrines
+		}
+		mutually_exclusive = {
+			focus = SIA_every_man_for_the_country
+			focus = SIA_bullets_before_peoples
+		}
+		completion_reward = {
+		add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_grand_battle_plan
+			}
+		}
+		x = 36
+		y = 2
+
+	}
+	focus = {
+		id = SIA_fortify_our_borders
+		icon = GFX_goal_generic_construct_military
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_defensive_approach
+		}
+		completion_reward = {
+		custom_effect_tooltip = SIA_border_fortification_tooltip
+		hidden_effect = {
+		289 = {
+				add_building_construction = {
+							type = bunker
+							level = 2
+							province = 7292
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 1244
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 10293
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 12264
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 7601
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 12417
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 1548
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 1535
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 4511
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 7516
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 10384
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 12345
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 7531
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 8045
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 4496
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 1990
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 10371
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 7675
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 1253
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 7312
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 7559
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 4566
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 10193
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 4348
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 7587
+							instant_build = yes
+						}
+						}
+					724 = {
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 4392
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 12122
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 12220
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 4388
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 1308
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 10158
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 1279
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 4297
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 7236
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 10156
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 12131
+							instant_build = yes
+						}
+					}
+		}
+		}
+		x = 36
+		y = 3
+
+	}
+	focus = {
+		id = SIA_bullets_before_peoples
+		icon = GFX_goal_generic_army_artillery2
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_modernise_our_doctrines
+		}
+		mutually_exclusive = {
+			focus = SIA_defensive_approach
+			focus = SIA_every_man_for_the_country
+		}
+		completion_reward = {
+		add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_superior_firepower
+
+			}
+		}
+		x = 38
+		y = 2
+
+	}
+	focus = {
+		id = SIA_artillery_research
+		icon = GFX_goal_generic_army_artillery
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_bullets_before_peoples
+		}
+		completion_reward = {
+		add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.5
+				uses = 2
+				category = artillery
+
+			}
+		}
+		x = 38
+		y = 3
+
+	}
+	focus = {
+		id = SIA_military_academy
+		icon = GFX_focus_generic_military_academy
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_mass_mobilisation
+			focus = SIA_fortify_our_borders
+			focus = SIA_artillery_research
+		}
+		completion_reward = {
+		add_research_slot = 1
+		add_ideas = SIA_military_academy
+		}
+		x = 36
+		y = 4
+
+	}
+	focus = {
+		id = SIA_electronic_research
+		icon = GFX_goal_generic_production2
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_military_academy
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.5
+				uses = 2
+				category = electronics
+			}
+		}
+		x = 35
+		y = 5
+
+	}
+	focus = {
+		id = SIA_radar_research
+		icon = GFX_goal_generic_radar
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_military_academy
+		}
+		completion_reward = {
 			add_tech_bonus = {
 				name = radar_focus
 				bonus = 0.5
@@ -613,1073 +2503,48 @@ focus_tree = {
 				category = radar_tech
 			}
 		}
-	}
-	
-	focus = {
-		id = SIA_nuclear
-		icon = GFX_focus_wonderweapons
-		prerequisite = { focus = SIA_radar }
-		x = 8
-		y = 4
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = secret_bonus
-				bonus = 0.5
-				uses = 1
-				category = nuclear
-				category = rocketry
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.25
-				always = yes
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_synth_oil_focus
-		prerequisite = { focus = SIA_infrastructure_effort_2 }
-		x = 0
+		x = 37
 		y = 5
-		cost = 10
-		icon = GFX_goal_generic_oil_refinery
-		ai_will_do = {
-			factor = 1
-		}
 
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = synth_bonus
-				bonus = 0.5
-				uses = 1
-				category = synth_resources
-			}
-		}
 	}
-	
 	focus = {
-		id = SIA_tech_slot
-		icon = GFX_focus_research
-		prerequisite = { focus = SIA_heal_the_divide_2 }
-		prerequisite = { focus = SIA_production_effort_1 }
-		available = {
-			num_of_factories > 50
-		}
-		cancel_if_invalid = no
-		continue_if_invalid = yes
-		x = 5
-		y = 6
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-   
-   focus = { 
-	 id = SIA_adressing_political_issues
-	 icon = GFX_goal_generic_demand_territory
-	 x=16
-	 y=0
-	 cost = 10
-	 
-	 ai_will_do = {
-	  factor = 5
-	 }
-	 available_if_capitulated = yes
-	 completion_reward = {
-       add_political_power = 120	 
-	 }
-    }
-   focus = {
-		id = SIA_democratic_support
-		icon = GFX_goal_support_democracy
-		prerequisite = { focus = SIA_adressing_political_issues }
-		mutually_exclusive = { focus = SIA_fascism_support}
-        mutually_exclusive = { focus = SIA_communism_support}
-		x = 11
-		y = 1
-		cost = 10
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_ideas = democratic_influence
-			#Increase in Democratic Support
-		}
-	}
-
-  focus = {
-   id = SIA_strenghten_rel_france
-   icon = GFX_goal_anschluss
-   prerequisite = { focus = SIA_democratic_support }
-   x = 10
-   y = 2
-   cost = 5
-    ai_will_do = {
-			factor = 5
-		}
-    available_if_capitulated = yes
-	completion_reward = {
-	 add_opinion_modifier = { target = FRA modifier = offered_support } 
-	}  
-  }  
-  
-  focus = {
-        id = SIA_fortify_siam
-   		icon = GFX_goal_generic_defence
-		x = 10
-		y = 5
-		cost = 10
-        prerequisite = { focus = SIA_join_allies }
-		ai_will_do = {
-			factor = 5
-		}		
-
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			724 = {
-				add_building_construction = {
-					type = bunker
-					province = 7236
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					province =  7236 
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = bunker
-					province = 4932
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = bunker
-					province = 12122
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					province =  12122
-					level = 2
-					instant_build = yes
-				}
-				#Extra fort on naval bases
-				add_building_construction = {
-					type = bunker
-					province = {
-						all_provinces = yes
-						limit_to_naval_base = yes
-					}
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					province = {
-						all_provinces = yes
-						limit_to_naval_base = yes
-					}
-					level = 2
-					instant_build = yes
-				}
-
-			}
-
-			289 = {
-				#Fortify entire coastline
-				add_building_construction = {
-					type = bunker
-					province = {
-						all_provinces = yes
-						limit_to_coastal = yes
-					}
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					province = {
-						all_provinces = yes
-						limit_to_coastal = yes
-					}
-					level = 2
-					instant_build = yes
-				}
-
-				#Extra fort on naval bases
-				add_building_construction = {
-					type = bunker
-					province = {
-						all_provinces = yes
-						limit_to_naval_base = yes
-					}
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					province = {
-						all_provinces = yes
-						limit_to_naval_base = yes
-					}
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-    }
-	
-	 focus = {
-   id = SIA_strenghten_rel_uk
-   icon = GFX_goal_anschluss
-   prerequisite = { focus = SIA_democratic_support }
-   x = 12
-   y = 2
-   cost = 5
-    ai_will_do = {
-			factor = 5
-		}
-    available_if_capitulated = yes
-	completion_reward = {
-	 add_opinion_modifier = { target = ENG modifier = offered_support } 
-	}  
-  }
- 
-    focus = {
-      id= SIA_democracy
-	  icon = GFX_goal_support_democracy
-	  x = 11
-	  y = 3
-	  cost = 10
-	  ai_will_do = { factor = 5 }	
-	  prerequisite = { focus = SIA_strenghten_rel_france }
-	  prerequisite = { focus = SIA_strenghten_rel_uk }
-		available_if_capitulated = yes
-		completion_reward = {
-				add_popularity = {
-					ideology = fascism
-					popularity = -0.1
-				}
-				add_popularity = {
-					ideology = communism
-					popularity = -0.1
-				}
-				add_popularity = {
-				 ideology = democratic
-				 popularity = +0.1
-				}
-			
-			add_ideas = democratic_leanings
-			add_political_power = 120
-		}
-
-    }
-	
-	focus = {
-		id = SIA_volunteer_nation
-		icon = GFX_goal_generic_political_pressure
-		prerequisite = { focus = SIA_join_allies }
-		x = 12
-		y = 5
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = yes
-
-
-		completion_reward = {
-			add_ideas = volunteer_force
-		}
-	}
-	
-	focus = {
-		id = SIA_youth
-		icon = GFX_goal_generic_more_territorial_claims
-		prerequisite = { focus = SIA_volunteer_nation }
-		x = 12
-		y = 6
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_ideas = military_youth_focus
-			if = {
-				limit = { has_government = democratic }
-				add_popularity = {
-					ideology = democratic
-					popularity = 0.2
-				}
-			}
-			if = {
-				limit = { has_government = neutrality }
-				add_popularity = {
-					ideology = democratic
-					popularity = 0.1
-				}
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_chinese_elites
-		icon = GFX_focus_RAJ_indian_gurkhas
-		prerequisite = { focus = SIA_youth }
-		x = 12
-		y = 7
-		cost = 10
-
-		ai_will_do = {
-			factor = 5
-		}
-
-		available = {
-			has_tech = tech_mountaineers
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {		
-			custom_effect_tooltip = SIA_chinese_elites_tt
-			hidden_effect = {	
-				division_template = {
-					name = "Siamese-Chinese elites"
-					priority = 2
-					division_names_group = SIA_INF_01
-					regiments = {
-						mountaineers = { x = 0 y = 0 }
-						mountaineers = { x = 0 y = 1 }
-						mountaineers = { x = 0 y = 2 }
-			
-	    	   		 	mountaineers = { x = 1 y = 0 }
-						mountaineers = { x = 1 y = 1 }
-						mountaineers = { x = 1 y = 2 }
-
-						mountaineers = { x = 2 y = 0 }
-						mountaineers = { x = 2 y = 1 }
-						mountaineers = { x = 2 y = 2 }
-					}
-				}
-	
-				random_owned_controlled_state = {
-					prioritize = { 289 }
-					create_unit = {
-						division = "name = \"1. Siamese-Chinese elites\" division_template = \"Siamese-Chinese elites\" start_experience_factor = 1.0" 
-						owner = SIA
-					}	
-				}
-			}
-
-		}
-	}
-	
-	focus = {
-		id = SIA_british_naval_support
-		icon = GFX_goal_generic_navy_doctrines_tactics
-		prerequisite = { focus = SIA_fortify_siam }
-		x = 10
-		y = 6
-		cost = 10
-		ai_will_do = {
-			factor = 5
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			navy_experience = 20
-			add_tech_bonus = {
-				name = SIA_british_naval_support
-				bonus = 0.5
-				uses = 1
-				category = naval_equipment
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_british_naval_effort
-		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 10
-		y = 7
-		cost = 10
-
-		available_if_capitulated = yes
-        prerequisite = { focus = SIA_british_naval_support }
-
-		available = {
-			any_state = {
-				is_coastal = yes
-				is_controlled_by = SIA
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 2
-			add_building_construction = {
-				type = dockyard
-				level = 2
-				instant_build = yes
-			}
-		}
-		
-		completion_reward = {
-				724 = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = dockyard
-						level = 2
-						instant_build = yes
-					}
-				}
-			}
-			
-	}			
-		
-	focus = {
-		id = SIA_naval_wolves
-		icon = GFX_goal_generic_wolf_pack
-		prerequisite = { focus = SIA_british_naval_effort }
-		prerequisite = { focus = SIA_chinese_elites }
-		x = 11
-		y = 8
-		cost = 10
-
-		ai_will_do = {
-			factor = 5
-		}
-
-		available = {
-	     has_tech = marines
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {		
-			custom_effect_tooltip = SIA_naval_wolves_tt
-			hidden_effect = {	
-				division_template = {
-					name = "Siamese naval wolves"
-					priority = 2
-					division_names_group = SIA_MAR_01
-					regiments = {
-						marine = { x = 0 y = 0 }
-						marine = { x = 0 y = 1 }
-						marine = { x = 0 y = 2 }
-			
-	    	   		 	marine = { x = 1 y = 0 }
-						marine = { x = 1 y = 1 }
-						marine = { x = 1 y = 2 }
-
-						marine = { x = 2 y = 0 }
-						marine = { x = 2 y = 1 }
-						marine = { x = 2 y = 2 }
-					}
-				}
-	
-				random_owned_controlled_state = {
-					prioritize = { 724 }
-					create_unit = {
-						division = "name = \"1. Siamese wolves\" division_template = \"Siamese naval wolves\" start_experience_factor = 1.0" 
-						owner = SIA
-					}	
-					create_unit = {
-						division = "name = \"2. Siamese wolves\" division_template = \"Siamese naval wolves\" start_experience_factor = 1.0" 
-						owner = SIA
-					}
-				}
-			}
-
-		}
-	}
-	
-	focus = {
-		id = SIA_join_allies
-		icon = GFX_goal_anschluss
-		available = {
-			is_puppet = no
-			has_government = democratic
-			ENG = {
-				exists = yes
-				has_government = democratic
-			}
-			NOT = { has_war_with = ENG }
-		}
-		bypass = {
-			is_in_faction_with = ENG
-		}
-	 	prerequisite = { focus = SIA_democracy }
-		x = 11
-		y = 4
-		cost = 10
-
-		available_if_capitulated = yes
-
-		ai_will_do = {
-			factor = 0.9
-
-			modifier = {
-				factor = 2
-				ai_irrationality < 15
-			}
-			modifier = {
-				factor = 2
-				ai_irrationality < 20
-			}
-			modifier = {
-				factor = 0.5
-				ai_irrationality > 30
-			}
-		}
-		completion_reward = {
-			ENG = { country_event = { id = britain.30 } }
-		}
-	}
-	
-	
-	
-	focus = {
-		id = SIA_japan_war
-		icon = GFX_goal_generic_production 
-		prerequisite = {  focus = SIA_naval_wolves }
-		available = {	
-			r56_script_i_am_sane = yes
-			JAP = {
-				r56_script_target_is_sane = yes
-			}
-		}
-			
-		bypass = {
-			JAP = {
-				r56_script_standard_bypass = yes
-			}
-		}
-		will_lead_to_war_with = JAP
-		x = 10
-		y = 9
-		cost = 10
-		ai_will_do = {
-			factor = 10
-		}	
-		completion_reward = {
-			create_wargoal = {
-				type = take_state_focus
-				target = JAP
-				generator = { 524 } 
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_fascism_support
-		icon = GFX_goal_generic_defence
-		prerequisite = { focus = SIA_adressing_political_issues }
-		mutually_exclusive = { focus = SIA_democratic_support}
-        mutually_exclusive = { focus = SIA_communism_support}
-		x = 16
-		y = 1
-		cost = 10
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_ideas = fascist_influence
-			#Increase in fascism Support
-		}
-	}
-	
-	focus = {
-   id = SIA_strenghten_rel_jap
-   icon = GFX_goal_anschluss
-   prerequisite = { focus = SIA_fascism_support }
-   x = 15
-   y = 2
-   cost = 5
-    ai_will_do = {
-			factor = 5
-		}
-    available_if_capitulated = yes
-	completion_reward = {
-	 add_opinion_modifier = { target = JAP modifier = offered_support } 
-	}  
-  }
-  
-  focus = {
-   id = SIA_strenghten_rel_ger
-   icon = GFX_goal_anschluss
-   prerequisite = { focus = SIA_fascism_support }
-   x = 17
-   y = 2
-   cost = 5
-    ai_will_do = {
-			factor = 5
-		}
-    available_if_capitulated = yes
-	completion_reward = {
-	 add_opinion_modifier = { target = GER modifier = offered_support } 
-	}  
-  }
-  
-  focus = {
-      id = SIA_fascist_nation
-	  icon = GFX_goal_generic_small_arms
-	  x = 16
-	  y = 3
-	  cost = 10
-	  ai_will_do = { factor = 5 }	
-	  prerequisite = { focus = SIA_strenghten_rel_jap }
-	  prerequisite = { focus = SIA_strenghten_rel_ger }
-		available_if_capitulated = yes
-		completion_reward = {
-				add_popularity = {
-					ideology = fascism
-					popularity = +0.1
-				}
-				add_popularity = {
-					ideology = communism
-					popularity = -0.1
-				}
-				add_popularity = {
-				 ideology = democratic
-				 popularity = -0.1
-				}
-			
-			add_ideas = fascist_leanings
-		}
-
-    }
-	
-	focus = {
-		id = SIA_guanxi_war
-		icon = GFX_goal_generic_major_war
-		prerequisite = { focus = SIA_fascist_nation }
-		available = {	
-			r56_script_i_am_sane = yes
-			GXC = {
-				r56_script_target_is_sane = yes
-			}
-		}
-			
-		bypass = {
-			GXC = {
-				r56_script_standard_bypass = yes
-			}
-		}
-		will_lead_to_war_with = GXC
-		x = 14
-		y = 4
-		cost = 10
-		ai_will_do = {
-			factor = 10
-		}	
-		completion_reward = {
-			create_wargoal = {
-				type = take_state_focus
-				target = GXC
-				generator = { 591 } 
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_militarism
-		icon = GFX_goal_generic_political_pressure
-		prerequisite = { focus = SIA_fascist_nation }
-		x = 16
-		y = 4
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {			
-			add_ideas = fascist_military
-			army_experience = 20
-			set_rule = { can_send_volunteers = yes }
-		}
-	}
-
-	focus = {
-		id = SIA_paramilitarism
-		icon = GFX_goal_generic_military_sphere
-		prerequisite = { focus = SIA_militarism }
-		x = 16
-		y = 5
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_ideas = SIA_paramilitarism
-		}
-	}
-	
-	focus = {
-		id = SIA_japanese_ships
-		icon = GFX_goal_generic_navy_doctrines_tactics
-		prerequisite = { focus = SIA_fascist_nation }
-		x = 18
-		y = 4
-		cost = 10
-		ai_will_do = {
-			factor = 5
-		}
-		completion_reward = {
-			navy_experience = 20
-			add_tech_bonus = {
-				name = SIA_japanese_ships
-				bonus = 0.5
-				uses = 1
-				category = ss_tech
-				category = cv_tech
-				category = cvl_tech
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_german_equipment
+		id = SIA_develop_our_own_model
 		icon = GFX_goal_generic_small_arms
-		prerequisite = { focus = SIA_japanese_ships }
-		x = 18
-		y = 5
-		cost = 10
+		cost = 8,00
 		ai_will_do = {
-			factor = 5
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_modernise_the_siamese_army
 		}
 		completion_reward = {
 			add_tech_bonus = {
-				name = SIA_german_equipment
+				name = infantry_artillery_bonus
 				bonus = 0.5
 				uses = 1
 				category = infantry_weapons
-				category = land_doctrine
-				category = support_tech
 			}
 		}
-	}
-	
-	focus = {
-		id = SIA_revenge_time
-		icon = GFX_goal_generic_major_war
-		prerequisite = { focus = SIA_war_prep }
-		available = {	
-			r56_script_i_am_sane = yes
-			OR = {
-				if = {
-					limit = {
-						ENG = {
-							exists = yes
-						}
-					}
-					ENG = {
-						r56_script_target_is_sane = yes
-					}
-				}
-				if = {
-					limit = {
-						RAJ = {
-							exists = yes
-						}
-					}
-					RAJ = {
-						r56_script_target_is_sane = yes
-					}
-				}
-			}
-		}
-			
-		bypass = {
-			AND = {
-				if = {
-					limit = {
-						ENG = {
-							exists = yes
-						}
-					}
-					ENG = {
-						r56_script_standard_bypass = yes
-					}
-				}
-				if = {
-					limit = {
-						RAJ = {
-							exists = yes
-						}
-					}
-					RAJ = {
-						r56_script_standard_bypass = yes
-					}
-				}
-			}
-		}
-		will_lead_to_war_with = FRA
-		will_lead_to_war_with = ENG
-		will_lead_to_war_with = RAJ
-		x = 18
-		y = 8
-		cost = 10
-		ai_will_do = {
-			factor = 5		
-		}	
-		completion_reward = {
-			if = {
-				limit = {
-					RAJ = {
-						r56_script_target_is_sane = yes
-					}
-				}
-				create_wargoal = {
-					type = take_state_focus
-					target = RAJ
-					generator = { 288 640 } 
-				} 
-			}
-			if = {
-				limit = {
-					FRA = {
-						r56_script_target_is_sane = yes
-					}
-				}
-				create_wargoal = {
-					type = take_state_focus
-					target = FRA
-					generator = { 670 741 286 671 } 
-				}
-			}
-			hidden_effect ={
-				news_event = { hours = 6 id = news.30211 }
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_austerity
-		icon = GFX_goal_generic_consumer_goods
-		prerequisite = { focus = SIA_german_equipment }
-		prerequisite = { focus = SIA_paramilitarism }
-		x = 17
-		y = 6
-		cost = 10
-		ai_will_do = {
-			factor = 5
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_ideas = imperial_austerity_idea
-		}
-	}
-	
-	focus = {
-		id = SIA_war_prep
-		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = SIA_austerity }
-		x = 17
-		y = 7
-		cost = 10
-		ai_will_do = {
-			factor = 5
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_stability = 0.05
-			add_ideas = mobile_divisions_idea
-		}
-	}
-	
-	focus = {
-		id = SIA_communism_support 
-		icon = GFX_goal_generic_political_pressure
-		prerequisite = { focus = SIA_adressing_political_issues }
-		mutually_exclusive = { focus = SIA_democratic_support}
-        mutually_exclusive = { focus = SIA_fascism_support }
-		x = 22
+		x = 42
 		y = 1
-		cost = 10
 
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_ideas = communist_influence
-			#Increase in commie Support
-		}
-	}
-	
-	focus = {
-   id = SIA_strenghten_rel_PRC
-   icon = GFX_goal_anschluss
-   prerequisite = { focus = SIA_communism_support }
-   x = 21
-   y = 2
-   cost = 5
-    ai_will_do = {
-			factor = 5
-		}
-    available_if_capitulated = yes
-	completion_reward = {
-	 add_opinion_modifier = { target = PRC modifier = offered_support } 
-	}  
-  }
-  
-  focus = {
-   id = SIA_strenghten_rel_soviet
-   icon = GFX_goal_anschluss
-   prerequisite = { focus = SIA_communism_support }
-   x = 23
-   y = 2
-   cost = 5
-    ai_will_do = {
-			factor = 5
-		}
-    available_if_capitulated = yes
-	completion_reward = {
-	 add_opinion_modifier = { target = SOV modifier = offered_support } 
-	}  
-  }
-  
-  focus = {
-      id= SIA_communism
-	  icon = GFX_goal_generic_military_sphere
-	  x = 22
-	  y = 3
-	  cost = 10
-	  ai_will_do = { factor = 5 }	
-	  prerequisite = { focus = SIA_strenghten_rel_PRC }
-	  prerequisite = { focus = SIA_strenghten_rel_soviet }
-		available_if_capitulated = yes
-		completion_reward = {
-				add_popularity = {
-					ideology = communism
-					popularity = +0.1
-				}
-				add_popularity = {
-					ideology = fascism
-					popularity = -0.1
-				}
-				add_popularity = {
-				 ideology = democratic
-				 popularity = -0.1
-				}
-			
-			add_ideas = communist_leanings
-		}
-
-    }
-	
-	focus = {
-		id = SIA_aid_the_chinese
-		icon = GFX_goal_generic_political_pressure
-		prerequisite = { focus = SIA_communism }
-		x = 21
-		y = 4
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = yes
-
-
-		completion_reward = {
-			add_ideas = PRC_aid
-			add_political_power = 100
-			
-		}
 	}
 	focus = {
-		id = SIA_chinese_workers
-		icon = GFX_goal_generic_production
-		prerequisite = { focus = SIA_aid_the_chinese }
-		x = 21
-		y = 5
-		cost = 10
+		id = SIA_motorise_the_cavalry
+		icon = GFX_goal_generic_cavalry
+		cost = 8,00
 		ai_will_do = {
 			factor = 1
 		}
@@ -1694,487 +2559,1065 @@ focus_tree = {
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_ideas = chinese_nation
-		}
-	}
-	
-	focus = {
-		id = SIA_soviet_air_research
-		icon = GFX_goal_generic_secret_weapon
-		prerequisite = { focus = SIA_soviet_air_effort }
-		x = 23
-		y = 5
-		cost = 10
-		ai_will_do = {
-			factor = 5
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = no
-
-		complete_tooltip = {
-
+		prerequisite = {
+			focus = SIA_develop_our_own_model
 		}
-
-		completion_reward = {
-			air_experience = 20
-			add_tech_bonus = {
-				name = SIA_soviet_air_research
-				bonus = 0.5
-				uses = 1
-				category = air_doctrine
-			}
-			add_tech_bonus = {
-				name = SIA_soviet_air_research
-				bonus = 0.5
-				uses = 1
-				category = light_air
-				category = naval_air
-			}
-		}
-
-		
-	}
-	
-	focus = {
-		id = SIA_soviet_air_effort
-		icon = GFX_goal_generic_build_airforce
-		x = 23
-		y = 4
-		cost = 10
-
-		available_if_capitulated = yes
-        prerequisite = { focus = SIA_communism }
-
-		available = {
-			724 = {
-				is_controlled_by = SIA
-			}
-			289 = {
-				is_controlled_by = SIA
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 4
-			add_building_construction = {
-				type = air_base
-				level = 2
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = anti_air_building
-				level = 2
-				instant_build = yes
-			}
-		}
-		
-		completion_reward = {
-				289 = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = air_base
-						level = 1
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = anti_air_building
-						level = 2
-						instant_build = yes
-					}
-				}
-		}
-	    completion_reward = {
-				724 = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = air_base
-						level = 1
-						instant_build = yes
-					}
-				}
-			}	
-		
-	}
-
-    focus = {
-		id = SIA_grand_battleplan
-		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = SIA_soviet_air_research focus = SIA_chinese_workers }
-		x = 22
-		y = 6
-		cost = 10
-		ai_will_do = {
-			factor = 5
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			army_experience = 20
-			add_tech_bonus = {
-				name = SIA_grand_battleplan
-				bonus = 0.5
-				uses = 1
-				category = cat_grand_battle_plan
-			}
-           add_political_power = 60
-		}
-
-		
-	}
-	
-	focus = {
-		id = SIA_reunite_the_country
-		icon = GFX_goal_generic_production 
-		prerequisite = { focus = SIA_grand_battleplan }
-		available = {	
-			r56_script_i_am_sane = yes
-			OR = {
-				if = {
-					limit = {
-						FRA = {
-							exists = yes
-						}
-					}
-					FRA = {
-						r56_script_target_is_sane = yes
-					}
-				}
-				if = {
-					limit = {
-						RAJ = {
-							exists = yes
-						}
-					}
-					RAJ = {
-						r56_script_target_is_sane = yes
-					}
-				}
-			}
-		}
-			
-		bypass = {
-			AND = {
-				if = {
-					limit = {
-						FRA = {
-							exists = yes
-						}
-					}
-					FRA = {
-						r56_script_standard_bypass = yes
-					}
-				}
-				if = {
-					limit = {
-						RAJ = {
-							exists = yes
-						}
-					}
-					RAJ = {
-						r56_script_standard_bypass = yes
-					}
-				}
-			}
-		}
-		will_lead_to_war_with = FRA
-		will_lead_to_war_with = ENG
-		will_lead_to_war_with = RAJ
-		x = 20
-		y = 7
-		cost = 10
-		ai_will_do = {
-			factor = 5		
-		}	
-		completion_reward = {
-			if = {
-				limit = {
-					FRA = {
-						r56_script_target_is_sane = yes
-					}
-				}
-				create_wargoal = {
-					type = take_state_focus
-					target = FRA
-					generator = { 670 741 286 671 } 
-				}
-			}
-			if = {
-				limit = {
-					RAJ = {
-						r56_script_target_is_sane = yes
-					}
-				}
-				create_wargoal = {
-					type = take_state_focus
-					target = RAJ
-					generator = { 288 640 } 
-				}
-			}
-			hidden_effect ={
-				news_event = { hours = 6 id = news.30311 }
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_japan_nuisance
-		icon = GFX_focus_AST_war_japan
-		prerequisite = { focus = SIA_grand_battleplan }
-		available = {	
-			r56_script_i_am_sane = yes
-			JAP = {
-				r56_script_target_is_sane = yes
-			}
-		}
-			
-		bypass = {
-			JAP = {
-				r56_script_standard_bypass = yes
-			}
-		}
-		will_lead_to_war_with = JAP
-		x = 24
-		y = 7
-		cost = 10
-		ai_will_do = {
-			factor = 5		
-		}	
-		completion_reward = {
-			create_wargoal = {
-				type = take_state_focus
-				target = JAP
-				generator = { 524 526 645 525 527 528 } 
-			}
-			hidden_effect ={
-				news_event = { hours = 6 id = news.30411 }
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_army_effort
-		icon = GFX_goal_generic_allies_build_infantry
-		 x = 28
-         y = 0
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			army_experience = 20
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 0.5
-				uses = 1
-				category = land_doctrine
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_equipment_effort
-		icon = GFX_goal_generic_army_artillery2
-		prerequisite = { focus = SIA_army_effort }
-		x = 26
-		y = 1
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = infantry_weapons_bonus
-				bonus = 0.5
-				uses = 1
-				category = infantry_weapons
-				category = artillery
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_equipment_effort_2
-		icon = GFX_goal_generic_small_arms
-		prerequisite = { focus = SIA_equipment_effort }
-		x = 26
-		y = 2
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = infantry_weapons_bonus
-				bonus = 0.5
-				uses = 1
-				category = support_tech
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_motorized
-		icon = GFX_goal_generic_army_motorized
-		prerequisite = { focus = SIA_army_effort }
-		x = 30
-		y = 1
-		cost = 10
-
-		available_if_capitulated = yes
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = motorized_bonus
-				bonus = 0.5
-				uses = 1
-				category = motorized_equipment
+				bonus = 0.50
+				technology = motorised_infantry
 			}
 		}
-	}
-	
-	focus = {
-		id = SIA_tanks
-		icon = GFX_goal_generic_build_tank
-		prerequisite = { focus = SIA_motorized }
-		x = 30
+		x = 40
 		y = 2
-		cost = 10
 
-		available_if_capitulated = yes
+	}
+	focus = {
+		id = SIA_mass_production
+		icon = GFX_focus_secret_rearmament
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
 
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_develop_our_own_model
+		}
+		completion_reward = {
+		add_ideas = SIA_mass_production
+		}
+		x = 42
+		y = 2
+
+	}
+	focus = {
+		id = SIA_study_tanks
+		icon = GFX_goal_generic_army_tanks
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_motorise_the_cavalry
+		}
+		prerequisite = {
+			focus = SIA_mass_production
+		}
 		completion_reward = {
 			add_tech_bonus = {
-				name = tanks_bonus
-				bonus = 0.5
+				name = armor_bonus
+				bonus = 0.4
 				uses = 1
 				category = armor
 			}
 		}
-	}
-	
-	focus = {
-		id = SIA_doctrine_inf_1
-		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = SIA_army_effort }
-		x = 28
-		y = 1
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = doctrine_bonus
-				bonus = 0.5
-				uses = 1
-				category = land_doctrine
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_doctrine_inf_2
-		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = SIA_doctrine_inf_1 }
-		prerequisite = { focus = SIA_equipment_effort_2 focus = SIA_tanks }
-		x = 28
+		x = 41
 		y = 3
-		cost = 10
 
-		available_if_capitulated = yes
+	}
+	focus = {
+		id = SIA_support_bataillons
+		icon = GFX_goal_generic_military_sphere
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
 
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_develop_our_own_model
+		}
 		completion_reward = {
 			add_tech_bonus = {
-				name = doctrine_bonus
+				name = USA_support_rock_island
+				uses = 2
 				bonus = 0.5
-				uses = 1
-				category = land_doctrine
+				category = support_tech
 			}
 		}
+		x = 44
+		y = 2
+
 	}
-	
 	focus = {
-		id = SIA_doctrine_inf_3
-		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = SIA_doctrine_inf_2 }
-		x = 28
-		y = 4
-		cost = 10
+		id = SIA_jungle_training
+		icon = GFX_focus_RAJ_lions_of_the_great_war
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
 
-		available_if_capitulated = yes
+		available = {
 
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_support_bataillons
+		}
+		completion_reward = {
+			custom_effect_tooltip = SIA_siam_jungle_training
+			hidden_effect = { set_technology = { jungle_warfare = 1 } }
+		}
+		x = 43
+		y = 3
+
+	}
+	focus = {
+		id = SIA_marines_corps
+		icon = GFX_goal_generic_amphibious_assault
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_support_bataillons
+		}
 		completion_reward = {
 			add_tech_bonus = {
-				name = doctrine_bonus
+				name = USA_amphibious_operations
 				bonus = 0.5
 				uses = 1
-				category = land_doctrine
+				category = tp_tech
+			}
+			add_tech_bonus = {
+				name = USA_expand_the_USMC
+				bonus = 0.5
+				uses = 1
+				technology = marines
+				technology = marines2
 			}
 		}
+		x = 45
+		y = 3
+
 	}
-	
 	focus = {
-		id = SIA_aviation_effort
-		icon = GFX_goal_generic_build_airforce
-		x = 34
-		y = 0
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		complete_tooltip = {
-			air_experience = 25
-			if = { limit = { has_country_flag = aviation_effort_AB }
-				add_building_construction = {
-					type = air_base
-					level = 2
-					instant_build = yes
-				}
-			}			
-			add_tech_bonus = {
-				name = air_doc_bonus
-				bonus = 0.5
-				uses = 1
-				category = air_doctrine
-			}			
+		id = SIA_study_foreign_ships
+		icon = GFX_focus_generic_destroyer
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
 		}
 
-		completion_reward = {
-			air_experience = 25
+		available = {
 
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_modernise_our_navy
+		}
+		x = 49
+		y = 1
+		completion_reward = {
+		add_ideas = SIA_study_foreign_ships
+		}
+
+	}
+	focus = {
+		id = SIA_british_ships
+		icon = GFX_focus_chi_british_cooperation
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_study_foreign_ships
+		}
+		available = {
+		is_in_faction_with = ENG
+		}
+		mutually_exclusive = {
+			focus = SIA_japanese_ships
+		}
+		completion_reward = {
+		ENG { country_event = siam.13 }
+		}
+		x = 48
+		y = 2
+
+	}
+	focus = {
+		id = SIA_japanese_ships
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_study_foreign_ships
+		}
+		mutually_exclusive = {
+			focus = SIA_british_ships
+		}
+		available = {
+		is_in_faction_with = JAP
+		}
+		completion_reward = {
+		JAP = { country_event = siam.12 }
+		}
+		x = 50
+		y = 2
+
+	}
+	focus = {
+		id = SIA_expand_our_dockyards
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_modernise_our_navy
+		}
+		completion_reward = {
 			if = {
 				limit = {
-					capital_scope = {
-						NOT = {
+					NOT = {
+						any_owned_state = {
+							dockyard > 0
 							free_building_slots = {
-								building = air_base
-								size > 1
+								building = dockyard
+								size > 2
+								include_locked = yes
 							}
 						}
 					}
+					any_owned_state = {
+						is_coastal = yes
+					}
 				}
 				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+					}
+					}
+					}
+		x = 53
+		y = 1
+
+	}
+	focus = {
+		id = SIA_develop_heavier_ships
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_expand_our_dockyards
+		}
+		mutually_exclusive = {
+			focus = SIA_submarine_warfare
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 2
+				category = cat_fleet_in_being
+			}
+
+		}
+		x = 52
+		y = 2
+
+	}
+	focus = {
+		id = SIA_battleships_focus
+		icon = GFX_goal_generic_navy_battleship
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_develop_heavier_ships
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = bc_tech
+				category = bb_tech
+			}
+
+		}
+		x = 52
+		y = 3
+
+	}
+	focus = {
+		id = SIA_submarine_warfare
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_expand_our_dockyards
+		}
+		mutually_exclusive = {
+			focus = SIA_develop_heavier_ships
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = cat_trade_interdiction
+			}
+
+		}
+		x = 54
+		y = 2
+
+	}
+	focus = {
+		id = SIA_submarines_developement
+		icon = GFX_goal_generic_navy_submarine
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_submarine_warfare
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = HUN_submarines
+				bonus = 0.5
+				uses = 2
+				category = ss_tech
+			}
+
+		}
+		x = 54
+		y = 3
+
+	}
+	focus = {
+		id = SIA_protect_our_ships
+		icon = GFX_goal_generic_navy_anti_submarine
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_battleships_focus
+			focus = SIA_submarines_developement
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = dd_tech
+			}
+
+		}
+		x = 53
+		y = 4
+
+	}
+	focus = {
+		id = SIA_convoys_production
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_expand_our_dockyards
+		}
+		x = 56
+		y = 2
+		completion_reward = {
+		add_ideas = SIA_convoys_production
+		}
+
+	}
+	focus = {
+		id = SIA_modernise_fighters
+		icon = GFX_goal_generic_air_fighter2
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_our_air_force
+		}
+		x = 59
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.5
+				uses = 1
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = fighter3
+				technology = heavy_fighter1
+				technology = heavy_fighter2
+				technology = heavy_fighter3
+			}
+		}
+
+	}
+	focus = {
+		id = SIA_invest_in_aviation
+		icon = GFX_goal_continuous_air_production
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_modernise_fighters
+		}
+		x = 59
+		y = 2
+		completion_reward = {
+		add_ideas = SIA_aviation_investments
+		}
+
+	}
+	focus = {
+		id = SIA_strategic_destruction
+		icon = GFX_goal_generic_air_bomber
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_invest_in_aviation
+		}
+		mutually_exclusive = {
+			focus = SIA_bomb_their_troops
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				technology = strategic_bomber1
+				technology = strategic_bomber2
+				technology = strategic_bomber3
+				category = tactical_bomber
+			}
+		}
+		x = 58
+		y = 3
+
+	}
+	focus = {
+		id = SIA_bomb_their_troops
+		icon = GFX_goal_generic_CAS
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_invest_in_aviation
+		}
+		mutually_exclusive = {
+			focus = SIA_strategic_destruction
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = CAS_bonus
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber
+			}
+		}
+		x = 60
+		y = 3
+
+	}
+	focus = {
+		id = SIA_air_doctrines
+		icon = GFX_goal_generic_air_doctrine
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_strategic_destruction
+			focus = SIA_bomb_their_troops
+		}
+		x = 59
+		y = 4
+		completion_reward = {
+		add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 0.5
+				uses = 3
+				category = air_doctrine
+			}
+		}
+
+	}
+	focus = {
+		id = SIA_anti_chinese_sentiment
+		icon = GFX_goal_SIA_anti_chinese
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_pan_thai_propaganda
+		}
+		x = 13
+		y = 6
+		completion_reward = {
+		add_ideas = SIA_anti_chinese_sentiment
+		}
+
+	}
+	focus = {
+		id = SIA_negociate_with_vichy
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+				is_in_faction_with = GER
+				any_country = {
+				owns_state = 670 
+				owns_state = 741
+				is_puppet_of = GER
+			}
+				
+				
+				NOT = { has_country_flag = case_anton }
+				}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_woo_germany
+		}
+		
+		completion_reward = {
+				GER = { country_event = siam.6 }
+		}
+		x = 13
+		y = 7
+
+	}
+	focus = {
+		id = SIA_build_a_wellfare_state
+		icon = GFX_focus_generic_self_management
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_ressurect_the_yellow_cover_dossier
+		}
+		completion_reward = {
+		swap_ideas = {
+				remove_idea = SIA_social_reforms
+				add_idea = SIA_build_a_wellfare_state
+			}
+		}
+		x = 2
+		y = 8
+
+	}
+	focus = {
+		id = SIA_a_new_siam
+		icon = GFX_goal_SIA_liberal_siam
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_build_a_wellfare_state
+		}
+		prerequisite = {
+			focus = SIA_a_true_democracy
+		}
+		prerequisite = {
+			focus = SIA_westernization
+		}
+		completion_reward = {
+		add_political_power = 300
+		add_stability = 0.15
+		}
+		x = 4
+		y = 9
+
+	}
+	focus = {
+		id = SIA_the_royal_army
+		icon = GFX_goal_siam_royal_army
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_restore_absolute_power
+		}
+		x = 9
+		y = 6
+		completion_reward = {
+		add_ideas = SIA_royal_army
+		}
+
+	}
+	focus = {
+		id = SIA_ensure_loyalty_to_the_monarchy
+		icon = GFX_goal_siam_loyalty_monarchy
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_the_royal_army
+		}
+		completion_reward = {
+		add_ideas = SIA_loyalty_enforeced
+		}
+		x = 9
+		y = 7
+
+	}
+	focus = {
+		id = SIA_royal_youth_organization
+		icon = GFX_goal_generic_axis_build_infantry
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_ensure_loyalty_to_the_monarchy
+		}
+		completion_reward = {
+		add_ideas = SIA_royal_youth_organization
+		}
+		x = 9
+		y = 8
+
+	}
+	focus = {
+		id = SIA_the_old_order_restored
+		icon = GFX_goal_demand_sudetenland
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_royal_youth_organization
+		}
+		prerequisite = {
+			focus = SIA_siamese_identity
+		}
+		completion_reward = {
+		add_political_power = 300
+		add_stability = 0.05
+		}
+		x = 10
+		y = 9
+
+	}
+	focus = {
+		id = SIA_anti_air_construction
+		icon = GFX_focus_generic_air_defense
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_airport
+		}
+		completion_reward = { 
+			289 = {
+			
+				add_building_construction = {
+					type = anti_air_building
+					level = 2				
+					instant_build = yes
+				}
+			}
+			724 = {
+			
+				add_building_construction = {
+					type = anti_air_building
+					level = 2				
+					instant_build = yes
+				}
+			}
+		}
+		x = 61
+		y = 2
+
+	}
+	focus = {
+		id = SIA_airport
+		icon = GFX_goal_generic_build_airforce
+		cost = 8,00
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SIA_our_air_force
+		}
+		x = 61
+		y = 1
+		completion_reward = {
+		random_owned_controlled_state = {
 					limit = {
 						free_building_slots = {
 							building = air_base
@@ -2186,574 +3629,21 @@ focus_tree = {
 						level = 2
 						instant_build = yes
 					}
-					ROOT = { set_country_flag = aviation_effort_AB }
 				}
-			}
-			if = {
-				limit = {
-					capital_scope = {
+		random_owned_controlled_state = {
+					limit = {
 						free_building_slots = {
 							building = air_base
 							size > 1
 						}
 					}
-				}
-				capital_scope = {
 					add_building_construction = {
 						type = air_base
 						level = 2
 						instant_build = yes
 					}
-					ROOT = { set_country_flag = aviation_effort_AB }
 				}
-			}
-			add_tech_bonus = {
-				name = air_doc_bonus
-				bonus = 0.5
-				uses = 1
-				category = air_doctrine
-			}
 		}
+
 	}
-	
-	focus = {
-		id = SIA_air_force
-		icon = GFX_goal_generic_CAS
-		prerequisite = { focus = SIA_aviation_effort }
-		x = 34
-		y = 1
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = air_bonus
-				bonus = 0.5
-				uses = 1
-				category = light_air
-				category = tactical_bomber
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_tactical_air
-		icon = GFX_goal_generic_air_bomber
-		prerequisite = { focus = SIA_air_force }
-		mutually_exclusive = { focus = SIA_heavy_air}
-		x = 33
-		y = 2
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = air_bonus
-				bonus = 0.5
-				uses = 1
-				category = naval_air
-				category = cat_strategic_bomber
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_heavy_air
-		icon = GFX_goal_generic_air_naval_bomber
-		prerequisite = { focus = SIA_air_force }
-		mutually_exclusive = { focus = SIA_tactical_air}
-		x = 35
-		y = 2
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = air_bonus
-				bonus = 0.5
-				uses = 1
-				category = cat_heavy_fighter
-				category = cas_bomber
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_rocket_effort
-		icon = GFX_focus_rocketry
-		prerequisite = { focus = SIA_heavy_air focus = SIA_tactical_air }
-		
-		x = 33
-		y = 3
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = jet_rocket_bonus
-				ahead_reduction = 0.5
-				uses = 1
-				category = rocketry
-				category = jet_technology
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = {
-		id = SIA_air_doct_1
-		icon = GFX_goal_generic_air_doctrine
-		prerequisite = { focus = SIA_heavy_air focus = SIA_tactical_air }
-		x = 35
-		y = 3
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = air_doc_bonus
-				bonus = 0.5
-				uses = 1
-				category = air_doctrine
-			}
-		}
-	}
-	focus = {
-		id = SIA_air_doct_2
-		icon = GFX_goal_generic_air_doctrine
-		prerequisite = { focus = SIA_air_doct_1 }
-		x = 35
-		y = 4
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = air_doc_bonus
-				bonus = 0.5
-				uses = 1
-				category = air_doctrine
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_navy_funds
-		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 39
-		y = 0
-		cost = 10
-
-		available_if_capitulated = yes
-
-		available = {
-			any_state = {
-				is_coastal = yes
-				is_controlled_by = SIA
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 2
-			add_building_construction = {
-				type = dockyard
-				level = 2
-				instant_build = yes
-			}
-			navy_experience = 25
-			
-		}
-		
-		completion_reward = {
-		        navy_experience = 25
-				724 = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = dockyard
-						level = 2
-						instant_build = yes
-					}
-				}
-				
-			}
-			
-	}
-	
-	focus = {
-		id = SIA_navy_doc_1
-		icon = GFX_goal_generic_navy_battleship
-		prerequisite = { focus = SIA_navy_funds }
-		mutually_exclusive = { focus = SIA_navy_doc_2 focus = SIA_navy_doc_3}
-		x = 37
-		y = 1
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = naval_doctrine_bonus
-				bonus = 0.5
-				uses = 1
-				category = fleet_in_being_tree
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_navy_doc_2
-		icon = GFX_goal_generic_wolf_pack
-		prerequisite = { focus = SIA_navy_funds }
-		mutually_exclusive = { focus = SIA_navy_doc_1 focus = SIA_navy_doc_3}
-		x = 39
-		y = 1
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = naval_doctrine_bonus
-				bonus = 0.5
-				uses = 1
-				category = trade_interdiction_tree
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_navy_doc_3
-		icon = GFX_goal_generic_air_fighter2
-		prerequisite = { focus = SIA_navy_funds }
-		mutually_exclusive = { focus = SIA_navy_doc_1 focus = SIA_navy_doc_2}
-		x = 41
-		y = 1
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = naval_doctrine_bonus
-				bonus = 0.5
-				uses = 1
-				category = cat_base_strike
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_submarine_effort
-		icon = GFX_goal_generic_navy_submarine
-		prerequisite = { focus = SIA_navy_doc_3 focus = SIA_navy_doc_1 focus = SIA_navy_doc_2}
-		x = 37
-		y = 2
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				all_owned_state = {
-					OR = {
-						is_coastal = no
-						dockyard < 1
-					}
-				}
-			}
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = naval_doctrine_bonus
-				bonus = 0.5
-				uses = 2
-				category = ss_tech
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_carrier_effort
-		icon = GFX_goal_generic_air_naval_bomber
-		prerequisite = { focus = SIA_navy_doc_3 focus = SIA_navy_doc_1 focus = SIA_navy_doc_2}
-		x = 39
-		y = 2
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				all_owned_state = {
-					OR = {
-						is_coastal = no
-						dockyard < 1
-					}
-				}
-			}
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = naval_doctrine_bonus
-				bonus = 0.5
-				uses = 1
-				category = cv_tech
-				category = cvl_tech
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_destroyer_effort
-		icon = GFX_goal_generic_navy_doctrines_tactics
-		prerequisite = { focus = SIA_navy_doc_3 focus = SIA_navy_doc_1 focus = SIA_navy_doc_2}
-		x = 41
-		y = 2
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				all_owned_state = {
-					OR = {
-						is_coastal = no
-						dockyard < 1
-					}
-				}
-			}
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = naval_doctrine_bonus
-				bonus = 0.5
-				uses = 1
-				category = dd_tech
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_big_ship_effort
-		icon = GFX_goal_generic_navy_battleship
-		prerequisite = { focus = SIA_destroyer_effort focus = SIA_submarine_effort focus = SIA_carrier_effort }
-		x = 39
-		y = 3
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				all_owned_state = {
-					OR = {
-						is_coastal = no
-						dockyard < 1
-					}
-				}
-			}
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = naval_doctrine_bonus
-				bonus = 0.5
-				uses = 1
-				category = bc_tech
-				category = bb_tech
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_naval_doctrine_1
-		icon = GFX_goal_generic_navy_cruiser
-		prerequisite = { focus = SIA_big_ship_effort }
-		x = 39
-		y = 4
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				all_owned_state = {
-					OR = {
-						is_coastal = no
-						dockyard < 1
-					}
-				}
-			}
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = naval_doctrine_bonus
-				bonus = 0.5
-				uses = 1
-				category = naval_doctrine
-			}
-		}
-	}
-	
-	focus = {
-		id = SIA_democratic_demand_indochina_focus
-		available = {
-			is_puppet = no
-		}
-        prerequisite = { focus = SIA_naval_wolves }
-		x = 12
-		y = 9
-		cost = 10
-		icon = GFX_goal_generic_more_territorial_claims
-		ai_will_do = {
-			factor = 5			
-		}	
-		available = { 
-			custom_trigger_tooltip = {
-				tooltip = SIA_democratic_demand_indochina_focus_tt
-			}
-		}
-		completion_reward = {
-			FRA = { country_event = { id = france.32 } }
-		}
-	}
-
- focus = {
-		id = SIA_fascist_demand_indochina_focus
-		available = {
-			is_puppet = no
-		}
-        prerequisite = { focus = SIA_war_prep }
-		x = 16
-		y = 8
-		cost = 10
-		icon = GFX_goal_generic_more_territorial_claims
-		ai_will_do = {
-			factor = 5			
-		}	
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = SIA_fascist_demand_indochina_focus_tt
-			}
-		}
-		completion_reward = {
-			FRA = { country_event = { id = france.33 } }
-		}
 }
-
-focus = {
-		id = SIA_communist_demand_indochina_focus
-		available = {
-			is_puppet = no
-			NOT = { has_war_with = CAM }
-			NOT = { is_in_faction_with = CAM }
-			NOT = { has_war_with = LAO }
-			NOT = { is_in_faction_with = LAO }
-			NOT = { has_war_with = VIN }
-			NOT = { is_in_faction_with = VIN }
-			LAO = { communism >0.3 }
-			CAM = { communism >0.3 } 
-			VIN = { communism >0.3 }
-		}
-        prerequisite = { focus = SIA_spread_the_revolution }
-		x = 22
-		y = 8
-		cost = 10
-		icon = GFX_goal_generic_more_territorial_claims
-		ai_will_do = {
-			factor = 5			
-		}	
-		complete_tooltip = {
-
-		}
-		completion_reward = {
-		 FRA = { country_event = { id = france.34 } } 
-		}
-}
-
-focus = {
-		id = SIA_spread_the_revolution
-		icon = GFX_goal_tfv_burn_the_royal_portraits
-		prerequisite = { focus = SIA_grand_battleplan }
-		x = 22
-		y = 7
-		cost = 10
-
-		ai_will_do = {
-			factor = 5
-		}
-
-		available = {
-			communism > 0.4
-            			has_equipment = {
-				infantry_equipment > 1000
-			}
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = yes
-
-
-		completion_reward = {
-		    FRA = { country_event = { id = france.35 } }
-			hidden_effect = {
-			news_event = { hours = 6 id = news.30811 }
-					}
-		}
-}
-
-   
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-    	
-	
-	
-	
-  
-  
-  
-	
-  
-}
-
-
-
-

@@ -1,0 +1,400 @@
+###########################
+# Siamese Events, by BlueFoxy
+###########################
+
+add_namespace = siam
+##############
+Country Events 
+##############
+# Second Boworadet Rebellion (Royalist Path)
+country_event = {
+	id = siam.1
+	title = siam.1.t
+	desc = siam.1.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = siam.1.a
+	create_country_leader = {
+			name = "Phraya Songsuradej"
+			desc = "POLITICS_PHRAYA_SONGSURADEJ_DESC"
+			picture = "Portrait_USA_Generic_2.dds"
+			expire = "1965.1.1"
+			ideology = despotism
+		}
+	}
+}
+
+country_event = {
+	id = siam.2
+	title = siam.2.t
+	desc = siam.2.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = siam.2.a
+		ENG = { add_to_faction = SIA }
+		SIA = {
+			add_ai_strategy = {
+				type = alliance
+				id = "ENG"
+				value = 200
+			}
+		}
+		hidden_effect = {
+			news_event = { hours = 6 id = siam.news.1 }
+		}
+	
+	}
+}
+
+country_event = {
+	id = siam.3
+	title = siam.3.t
+	desc = siam.3.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = siam.3.a
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.3
+		}
+		set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+	
+	
+	}
+}
+
+country_event = {
+	id = siam.4
+	title = siam.4.t
+	desc = siam.4.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = siam.4.a
+		GER = { add_to_faction = SIA }
+		SIA = {
+			add_ai_strategy = {
+				type = alliance
+				id = "GER"
+				value = 200
+			}
+		}
+	option = {
+		name = siam.4.b
+	
+	
+	}
+	
+	}
+}
+
+
+country_event = {
+	id = siam.5
+	title = siam.5.t
+	desc = siam.5.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = siam.5.a
+		JAP = { add_to_faction = SIA }
+		SIA = {
+			add_ai_strategy = {
+				type = alliance
+				id = "JAP"
+				value = 200
+			}
+		}
+		}
+	option = {
+		name = siam.5.b
+	
+	
+	}
+	
+	}
+
+
+country_event = {
+	id = siam.6
+	title = siam.6.t
+	desc = siam.6.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = siam.6.a
+		SIA = { country_event = siam.7 }
+	option = {
+		name = siam.6.b
+		SIA = { country_event = siam.8 }
+	
+	}
+	
+	}
+}
+
+country_event = {
+	id = siam.7
+	title = siam.7.t
+	desc = siam.7.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = siam.7.a
+		transfer_state = 670
+		transfer_state = 741
+	
+	}
+}
+
+
+country_event = {
+	id = siam.8
+	title = siam.8.t
+	desc = siam.8.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = siam.8.a
+	
+	}
+	option = {
+		name = siam.8.b
+		create_wargoal = {
+			type = take_state_focus
+			target = random_other_country = {
+					limit = {
+						owns_state = 670
+						owns_state = 741
+					}
+					}
+			generator = { 670 741  }
+		}
+	
+	}
+}
+
+country_event = {
+	id = siam.9
+	title = siam.9.t
+	desc = siam.9.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = siam.9.a
+		SIA = { country_event = siam.10 }
+	
+	}
+	option = {
+		name = siam.9.b
+		SIA = { country_event = siam.11 }
+	
+	}
+}
+
+country_event = {
+	id = siam.10
+	title = siam.10.t
+	desc = siam.10.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = siam.10.a
+		SIA = { country_event = siam.10 }
+		transfer_state = 670
+		transfer_state = 741
+	
+	}
+}
+
+country_event = {
+	id = siam.11
+	title = siam.11.t
+	desc = siam.11.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = siam.11.a
+	
+	}
+}
+
+country_event = {
+	id = siam.12
+	title = siam.12.t
+	desc = siam.12.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = siam.12.a
+		JAP = {
+		SIA = { country_event = siam.15 }
+			    transfer_ship = {
+			        prefer_name = "Shimakaze"
+			        type = destroyer 
+			        target = SIA
+			    }
+			    transfer_ship = {
+			        prefer_name = "Nadakaze" 
+			        type = destroyer
+			        target = SIA
+			    }
+				transfer_ship = {
+			        prefer_name = "Akikaze" 
+			        type = destroyer
+			        target = SIA
+			    }
+				transfer_ship = {
+			        prefer_name = "Hakaze"  
+			        type = destroyer
+			        target = SIA
+			    }
+				transfer_ship = {
+			        prefer_name = "Kuretake"  
+			        type = destroyer
+			        target = SIA
+			    }
+				transfer_ship = {
+			        prefer_name = "Wakatake"  
+			        type = destroyer
+			        target = SIA
+			    }
+				transfer_ship = {
+			        prefer_name = "Sanae"  
+			        type = destroyer
+			        target = SIA
+			    }
+				transfer_ship = {
+			        prefer_name = "Fuyo"  
+			        type = destroyer
+			        target = SIA
+			    }
+				transfer_ship = {
+			        prefer_name = "Karukaya"  
+			        type = destroyer
+			        target = SIA
+			    }
+				transfer_ship = {
+			        prefer_name = "Asagao"  
+			        type = destroyer
+			        target = SIA
+			    }
+			}
+	
+	}
+	option = {
+		name = siam.12.b
+	
+	}
+}
+
+country_event = {
+	id = siam.13
+	title = siam.13.t
+	desc = siam.13.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = siam.13.a
+		SIA = { country_event = siam.14 }
+		ENG = {
+			    transfer_ship = {
+			        prefer_name = "HMS Scout"
+			        type = destroyer 
+			        target = SIA
+			    }
+			    transfer_ship = {
+			        prefer_name = "HMS Tenedos" 
+			        type = destroyer
+			        target = SIA
+			    }
+				transfer_ship = {
+			        prefer_name = "HMS Thanet" 
+			        type = destroyer
+			        target = SIA
+			    }
+				transfer_ship = {
+			        prefer_name = "HMS Thracian"  
+			        type = destroyer
+			        target = SIA
+			    }
+			}
+	
+	}
+	option = {
+		name = siam.13.b
+	
+	}
+}
+country_event = {
+	id = siam.14
+	title = siam.14.t
+	desc = siam.14.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = siam.14.a
+		navy_experience = 75
+		random_owned_controlled_state = {
+limit = {
+free_building_slots = {
+building = dockyard
+size > 0
+include_locked = yes
+}
+}
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = dockyard
+level = 1
+instant_build = yes
+}
+set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+} 
+	
+	}
+}
+}
+}
+
+###########
+News Events
+########## 
+news_event = {
+	id = siamnews.1
+	title = siamnews.1.t
+	desc = siamnews.1.d
+	picture = GFX_news_siam_allies
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = siamnews.1.a
+		
+	}
+	
+	
+	
+}
