@@ -1,7 +1,924 @@
 ideas = {
+	country = {
+		SIA_Rama_VII_King = {
 
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = sia_rama_vii
+			
+			modifier = {
+			stability_factor = 0.2
+			}
+			
+		}
+
+		SIA_republican_spirit = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_democratic_drift_bonus
+			
+			modifier = {
+			 	political_power_gain = 0.25
+			}
+			
+		}
+		
+		
+		SIA_social_reforms = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_goods_red_bonus
+			
+			modifier = {
+			 	consumer_goods_factor = 0.03
+				 industrial_capacity_factory = 0.05 
+			}
+			
+		}
+		
+		SIA_royal_army = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = chi_army_corruption3
+			
+			modifier = {
+			 	army_org_Factor = 0.1
+			}
+			
+		}
+		
+		SIA_loyalty_enforeced = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_secret_police
+			
+			modifier = {
+			 	foreign_subversive_activites = -0.50 
+			}
+			
+		}
+		
+		SIA_royal_youth_organization = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = hun_secret_rearmament
+			
+			modifier = {
+			 	conscription = 0.01
+				war_support_factor = 0.05				
+			}
+			
+		}
+		
+		SIA_defend_democracy = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = chi_army_corruption3
+			
+			modifier = {
+			 	conscription = 0.02
+				war_support_factor = 0.05				
+			}
+			
+		}
+		
+		SIA_build_a_wellfare_state = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_goods_red_bonus
+			
+			modifier = {
+			 	consumer_goods_factor = 0.05
+				 industrial_capacity_factory = 0.10 
+			}
+			
+		}
+		
+		SIA_army_purge = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = ENG_the_war_to_end_all_wars
+			
+			modifier = {
+			 	army_morale_factor = -0.3
+				army_org_Factor = -0.3 
+				research_bonus = { air_doctrine = -0.3 }
+				conscription_factor = -0.4
+			}
+			
+		}
+		
+		
+		SIA_pan_thai_propaganda = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = vittoria_mutilata
+			
+			modifier = {
+			 	political_power_gain = 0.25
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+				conscription = 0.01 
+				
+			}
+			
+		}
+		
+		SIA_tolerance_of_minorities = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_constitutional_guarantees
+			
+			modifier = {
+			 	production_speed_buildings_factor = 0.1 
+				stability_factor = 0.05 
+			}
+			
+		}
+		
+		SIA_siamese_identity = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = chi_war_of_resistance3
+			
+			modifier = {
+			 	army_core_defence_factor = 0.15
+				 war_support_factor = 0.05
+				
+			}
+			
+		}
+		
+		SIA_opposition_purged = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_purge
+			
+			modifier = {
+			 	 	political_power_factor = -0.5 
+					 	stability_factor = -0.10 
+					conscription_factor = -0.2
+						
+					
+			}
+			
+		}
+		
+		SIA_full_control = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = FRA_scw_intervention_nationalists_focus
+			
+			modifier = {
+			 	 	political_power_factor = 0.4
+					foreign_subversive_activites = -0.50 
+						
+					
+			}
+			
+		}
+		
+		SIA_increase_military_budget = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = man_five_year_plan_industry
+			
+			modifier = {
+			 	 	 	consumer_goods_factor = 0.05 
+						production_speed_arms_factory_factor = 0.15
+						
+					
+			}
+			
+		}
+		
+		SIA_improve_rice_exportations = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_agrarian_society
+			
+			modifier = {
+			 	 	 	production_speed_infrastructure_factor = 0.15
+						
+					
+			}
+			
+		}
+		
+		SIA_regulate_exports = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_agrarian_reform
+			
+			modifier = {
+			 	 	 	 	industrial_capacity_factory = 0.1 
+						
+					
+			}
+			
+		}
+		
+		SIA_great_depression = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = great_depression 
+			
+			modifier = {
+			 	 	 	 	industrial_capacity_factory = -0.1
+							consumer_goods_factor = 0.1
+							production_speed_buildings_factor = -0.1
+						
+					
+			}
+			
+		}
+		
+		SIA_mass_mobilisation = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_manpower_bonus 
+			
+			modifier = {
+			 	 	 	 	conscription = 0.03
+						
+					
+			}
+			
+		}
+		
+		SIA_mass_production = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_production_bonus 
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+			
+		}
+		
+		SIA_study_foreign_ships = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_the_london_naval_treaty 
+			
+			modifier = {
+			 	 	license_naval_purchase_cost = -0.5 
+						
+					
+			}
+			
+		}
+		
+		SIA_anti_chinese_sentiment = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = jap_intervene_in_china 
+			
+			modifier = {
+			 	 	 	 	 	stability_factor = -0.05
+								army_morale_factor = 0.05
+								army_org = 5 
+						
+					
+			}
+			
+		}
+		
+		SIA_military_academy = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_reserve_divisions 
+			
+			modifier = {
+			 	 	 	 	research_time_factor = -0.03
+						
+					
+			}
+			
+		}
+		
+		SIA_aviation_investments = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_air_research 
+			
+			equipment_bonus = {
+				fighter_equipment = {
+					instant = yes
+					build_cost_ic = -0.10
+				}
+			}	
+			
+		}
+		
+		SIA_convoys_production = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_coastal_defense_ships2 
+			
+			equipment_bonus = {
+				convoy = {
+					build_cost_ic = -0.15 instant = yes
+				}
+			}
+			
+		}
+		
+		SIA_foreign_investments = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_foreign_capital 
+			
+			modifier = {
+			 	 	 	 	consumer_goods_factor = -0.05
+						
+					
+			}
+			
+		}
+		
+		SIA_laissez_faire = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = can_wartime_prices_and_trade_board
+			
+			modifier = {
+			 	 	 	 	 	production_speed_buildings_factor = 0.1
+						
+					
+			}
+			
+		}
+		
+		SIA_german_officers = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = general_staff
+			
+			modifier = {
+			 	 	research_bonus = { land_doctrine = 0.08 }
+					planning_speed = 0.15
+					army_org_Factor = 0.05 
+						
+					
+			}
+			
+		}
+		
+		SIA_expansionist_projects = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = FRA_army_of_aggression_focus
+			
+			modifier = {
+			 	 	justify_war_goal_time = -0.25
+					conscription = 0.03
+					war_support_factor = 0.15
+					
+						
+					
+			}
+			
+		}
+
+		SIA_Rama_VII_Exile = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = sia_rama_vii_exile
+			
+			modifier = {
+			 	 	stability_factor = -0.10  
+						
+					
+			}
+			
+		}
+		
+		SIA_westernization = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_research_bonus
+			
+			modifier = {
+			 	 	 	research_time_factor = -0.02
+						production_speed_buildings_factor = 0.05
+						
+					
+			}
+			
+		}
+		
+		SIA_buddhist_traditions = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_pp_unity_bonus
+			
+			modifier = {
+			 	 	stability_factor = 0.10
+					mobilization_speed = 0.1 
+					consumer_goods_factor = -0.05 
+						
+					
+			}
+			
+		}
+		
+		SIA_support_from_the_KMT = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+	
+			removal_cost = -1
+
+			picture = generic_volunteer_expedition_bonus
+			
+			modifier = {
+			 	 	send_volunteer_size = 3
+				send_volunteers_tension = -0.5
+				send_volunteer_divisions_required = -1
+						
+					
+			}
+			
+		}
+		
+		SIA_weak_governement = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_disjointed_gov
+			
+			modifier = {
+			 	 	political_power_cost = 0.4
+				stability_factor = -0.15
+						
+					
+			}
+			
+		}
+		
+		
+		SIA_legislative_reforms = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_neutrality_drift_bonus
+			
+			modifier = {
+			 	 	 	stability_weekly = 0.001 						
+						
+					
+			}
+			
+		}
+		
+		
+		SIA_siamese_democracy = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_democratic_drift_bonus
+			
+			modifier = {
+			 	 	drift_defence_factor = 0.30
+					democratic_acceptance = 50
+					army_morale_factor = 0.05
+					research_time_factor = -0.03
+						
+					
+			}
+			
+		}
+
+		SIA_neutrality_and_prosperity = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = hun_hungarian_monarchy_democratic
+			
+			modifier = {
+			 	 	conscription = 0.02 
+					join_faction_tension = 0.60
+					enemy_justify_war_goal_time = 0.3 
+			}
+			
+		}
+		
+		SIA_absolute_power = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = FRA_scw_intervention_nationalists_focus
+			
+			modifier = {
+			 	 	political_power_gain = 0.20
+			}
+			
+		}
+
+
+}
 	political_advisor = {
+		
+		SIA_Pridi_Banomyong = {
 
+			picture = SIA_idea_Pridi_Banomyong
+			
+			allowed = {
+				original_tag = SIA
+			}
+			available = {
+				has_completed_focus = SIA_second_siamese_revolution
+			}
+			
+			traits = { democratic_reformer }
+		}
+
+		SIA_Luang_Wichitwathakan = {
+
+			picture = SIA_idea_Luang_Wichitwathakan
+			
+			allowed = {
+				original_tag = SIA
+			}
+			available = {
+				has_completed_focus = SIA_plaek_takes_power
+			}
+			
+			traits = { fascist_demagogue }
+		}
+		
+		SIA_Chao_Phraya_Srithammarin = {
+
+			picture = SIA_idea_Chao_Phraya_Srithammarin
+			
+			allowed = {
+				original_tag = SIA
+			}
+			available = {
+				has_completed_focus = SIA_second_monarchist_rebellion
+			}
+			
+			traits = { staunch_monarchist }
+		}
+		
+		SIA_Paribatra_Sukhumbandhu = {
+
+			picture = SIA_idea_Paribatra_Sukhumbandhu
+			
+			allowed = {
+				original_tag = SIA
+			}
+			
+			traits = { backroom_backstabber }
+		}
+
+		SIA_Pandemonium = {
+
+			picture = SIA_idea_Pandemonium
+			
+			allowed = {
+				original_tag = SIA
+			}
+			
+			traits = { popular_figurehead }
+		}
+	
 		SIA_phot_bhahalyodin = {
 
 			picture = generic_political_advisor_asia_2
@@ -40,7 +957,7 @@ ideas = {
 		
 		SIA_luang_phibunsongkhram = {
 			
-			picture = generic_army_asia_2
+			picture = SIA_idea_minister_plaek
 
 			allowed = {
 				original_tag = SIA
@@ -56,13 +973,28 @@ ideas = {
 
 		SIA_phraya_chitnasongkhla = {
 
-			picture = generic_army_asia_3
+			picture = generic_army_asia_4
 			
 			allowed = {
 				original_tag = SIA
 			}
 			
 			traits = { army_chief_offensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SIA_phya_saovahba = {
+
+			picture = generic_army_asia_3
+			
+			allowed = {
+				original_tag = SIA
+			}
+			
+			traits = { army_chief_defensive_2 }
 			
 			ai_will_do = {
 				factor = 1
@@ -142,6 +1074,21 @@ ideas = {
 	}
 
 	high_command = {
+		
+		SIA_mongkut_chichalerm = {
+
+			picture = generic_army_asia_2
+			
+			allowed = {
+				original_tag = SIA
+			}
+			
+			traits = { army_infantry_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
 
 		SIA_tianliang_huntrakool = {
 
@@ -239,7 +1186,7 @@ ideas = {
 	theorist = {
 		SIA_manphya_khanphialong = {
 
-			picture = generic_army_asia_2
+			picture = generic_army_asia_5
 			
 			allowed = {
 				original_tag = SIA
@@ -283,274 +1230,7 @@ ideas = {
 		}
 
 	}
- 
 
- country = {
-       elite_schools_focus = {
-			removal_cost = -1
-			
-			allowed = {
-				always = no # Added via focus
-			}
 
-			allowed_civil_war = {
-				always = yes
-			}
-			
-			picture = generic_research_bonus
-			
-			modifier = {
-				research_time_factor = -0.03
-			}
-		}
-		
-		divided_nation_full = {
-			
-			
-			allowed = {
-				original_tag = SIA
-			}
 
-			allowed_civil_war = {
-				
-				OR = {has_government = neutrality
-                      has_government = fascism
-            		 }
-			}
-
-			removal_cost = -1
-			picture = generic_morale_bonus
-			modifier = {
-				political_power_cost = 0.5
-				conscription_factor = -0.5
-				stability_factor = -0.4
-			}
-		}
-		
-		divided_nation_half = {
-			
-			picture = generic_goods_red_bonus
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				
-				OR = {has_government = neutrality
-                      has_government = fascism
-            		 }
-			}
-
-			removal_cost = -1
-			
-			modifier = {
-				political_power_cost = 0.25
-				conscription_factor = -0.2
-				stability_factor = -0.2
-			}
-		}
-		
-		rice_reforms = {
-		
-		   removal_cost = -1
-			
-			allowed = {
-				always = no # Added via focus
-			}
-
-			allowed_civil_war = {
-				OR = {has_government = neutrality
-                      has_government = fascism
-            		 }
-			}
-
-			picture = GFX_idea_rice_reforms
-			
-			modifier = {
-				production_speed_buildings_factor = 0.10
-			}
-		}
-		
-		democratic_leanings = {
-              
-			removal_cost = -1 
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				OR = {has_government = neutrality
-                      has_government = democratic
-            		 }
-			}
-			picture = generic_volunteer_expedition_bonus
-
-			modifier = {
-				drift_defence_factor = 0.25
-				foreign_subversive_activites = -0.25
-				stability_factor = -0.03
-				trade_opinion_factor = 0.2
-			}
-		}
-        volunteer_force = {
-
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-
-			picture = GFX_idea_ast_volunteer_defence_corps
-			
-			rule = {
-				can_send_volunteers = yes
-			}
-
-			modifier = {
-				send_volunteer_divisions_required = -1
-				send_volunteer_size = 4
-			}
-		}
-		fascist_leanings = {
-              
-			removal_cost = -1 
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				OR = {has_government = neutrality
-                      has_government = fascism
-            		 }
-			}
-			picture = generic_volunteer_expedition_bonus
-
-			modifier = {
-				foreign_subversive_activites = -0.25
-				stability_factor = +0.05
-				political_power_gain = 0.5
-			}
-		}
-		
-		fascist_military = {
-		 
-		  allowed_civil_war = {
-				OR = {has_government = neutrality
-                      has_government = fascism
-            		 }
-			}
-		  picture = generic_volunteer_expedition_bonus
-		  modifier = {
-		   conscription = 0.1
-		  }		
-		}
-		
-		SIA_paramilitarism = {
-			
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-					has_government = fascism
-			}
-			
-			removal_cost = -1
-
-			picture = generic_infantry_bonus
-	
-			modifier = {
-				training_time_army_factor = -0.1
-				army_core_attack_factor = 0.1
-			    army_core_defence_factor = 0.1
-			}
-		}
-		
-		mobile_divisions_idea = {
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-			
-			modifier = {
-				army_morale_factor = 0.1
-				land_reinforce_rate = 0.02
-			}			
-		}
-		communist_leanings = {
-              
-			removal_cost = -1 
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				OR = {has_government = neutrality
-                      has_government = communism
-            		 }
-			}
-			picture = generic_volunteer_expedition_bonus
-
-			modifier = {
-				subversive_activites_upkeep = -0.5
-				conversion_cost_civ_to_mil_factor= -0.2
-				enemy_partisan_effect = -0.2
-			}
-		}
-		PRC_aid = {
-
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-
-			picture = generic_volunteer_expedition_bonus
-			
-			rule = {
-				can_send_volunteers = yes
-			}
-
-			modifier = {
-				send_volunteer_divisions_required = -1
-				send_volunteer_size = 2
-			}
-		}
-		chinese_nation = { 
-			removal_cost = -1
-			
-			picture = generic_communism_drift_bonus
-
-			allowed = {
-				always = no # Added via focus
-			}
-
-			allowed_civil_war = {
-				has_government = communism
-			}
-			
-			modifier = {
-				stability_factor = 0.2
-				industrial_capacity_factory = 0.05
-			}
-
-		}
-		
-		
-	}
 }
