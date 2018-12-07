@@ -139,6 +139,9 @@ special_projects = {
 				is_controlled_by = ROOT
 			}
 			NOT = { is_in_faction_with = YUG }
+			YUG = {
+				has_country_flag = rupnik_line_ready
+			}
 		}
 
 		modifier = {
