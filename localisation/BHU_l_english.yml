@@ -18,6 +18,9 @@ l_english:
 
  BHU_democratic_party:0 "Jai Gorkha"
  BHU_democratic_party_long:0 "Jai Gorkha"
+
+ BHU_democratic:0 "Parliamentary Bhutan" 
+ BHU_democratic_DEF:0 "The Parliamentary Bhutan"
  
  BHU_sonam_tobgay_dorji:0 "Sonam Tobgay Dorji"
  BHU_sonam_tobgay_dorji2:0 "Sonam Tobgay Dorji"
